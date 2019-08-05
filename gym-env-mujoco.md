@@ -11,7 +11,7 @@ file structure:
       foo_env.py
 
 ## gym-foo/setup.py
-'''python
+python'''
 from setuptools import setup
 
 setup(name='gym_foo',
