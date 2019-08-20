@@ -1,6 +1,7 @@
 
 # render mujoco_py
 
+```python
 #!/usr/bin/env python3
 """
 Shows how to use render callback.
@@ -29,9 +30,11 @@ while True:
     t += 1
     if t > 100 and os.getenv('TESTING') is not None:
         break
-
+```
 
 # mujoco
+
+```python
 
 #!/usr/bin/env python3
 """
@@ -71,3 +74,4 @@ while True:
 
     if os.getenv('TESTING') is not None:
         break
+```

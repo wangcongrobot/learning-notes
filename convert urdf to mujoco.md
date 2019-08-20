@@ -88,7 +88,7 @@ Hi @hellandhansen
 Personally I changed a little bit the PPO2 code and I use instead tf.train.Saver.
 
 I modified the save and load function in the Model object
-
+```python
 def save(save_path):
            """
            Save the model
@@ -103,6 +103,7 @@ def load(load_path):
            saver = tf.train.Saver()
            print('Loading ' + load_path)
            saver.restore(sess, load_path)
+```
 
 And the training part of the learn function
 
@@ -134,6 +135,7 @@ img = self.sim.render(mode='offscreen', camera_name='first-person', width=16, he
 (https://github.com/openai/mujoco-py/issues/172)
 Ok sim.render(...) creates an offscreen render_context but returns the image data. So if you want to get images do
 
+```python
 model = load_model_from_xml(MODEL_XML)
 sim = MjSim(model)
 img = sim.render(600, 600)
@@ -144,10 +146,12 @@ for i in range(20):
     sim.step()
     imgs.append(sim.render(600, 600))
 Should give you image data for those 20 steps.
+```
 
 # get image from mujoco
 (https://github.com/openai/mujoco-py/issues/441)
-''' python
+
+``` python
 import numpy as np
 import matplotlib.pyplot as plt
 import mujoco_py
@@ -191,7 +195,7 @@ img = env.env.sim.render(width=48, height=48, depth=False)
 plt.imshow(img)
 plt.show()
 # Then the image showing has only one color
-'''
+```
 
 
 
@@ -205,7 +209,8 @@ When I run env.render(mode="human") everything works as it should. However, if i
 
 Strangely, if I first call env.render(mode="human") I am able to call env.render(mode="rgb_array") afterwards without getting this error. So, for example, the following code works:
 
-`from gym.envs.mujoco.half_cheetah_v3 import HalfCheetahEnv
+```python
+from gym.envs.mujoco.half_cheetah_v3 import HalfCheetahEnv
 import numpy as np
 
 env = HalfCheetahEnv()
@@ -216,7 +221,7 @@ env.render(mode="human")
 for i in range(10000):
 a,b,c,d = env.step(np.random.randn(6).clip(-1,1))
 img=env.render(mode="rgb_array")`
-
+```
 But if I miss out the initial env.render(mode="human") I get the error.
 
 Desktop (please complete the following information):
@@ -234,8 +239,6 @@ output of: echo $USER - henry
 # mujoco rgb_array render
 
 A workaround I am using is to call render("human") once, then call render("rgb_array") normally.
-
-
 
 
 Furthermore when I add "None" argument at mysterious position
