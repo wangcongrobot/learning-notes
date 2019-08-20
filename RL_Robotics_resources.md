@@ -1,7 +1,12 @@
-# List some useful link of RL and Robotics
+# Reinforcement Learning Resource with Manipulation
+
+This a collection of some useful resource of reinforcement learning and manipulation. It's hard for beginner in robotics and reinforcement learning. The resource is not 
 
 __*Talk is cheap. Show me the code.*__
 			--- Linus Torvalds
+
+
+# Table of Contents
 
 [TOC]
 
@@ -220,7 +225,11 @@ TF-Agents: A library for reinforcement learning in tensorflow.
 
 - [Stable Baselines]()
 
-- []()
+- [coach](https://nervanasystems.github.io/coach/)
+
+Coach, developed by Intel AI lab, is a python reinforcement learning framework containing implementation of many state-of-the-art algorithms.
+
+
 
 - []()
 
