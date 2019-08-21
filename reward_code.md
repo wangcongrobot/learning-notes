@@ -2,14 +2,23 @@
 
 ## some blogs
 [reward shaping](https://zhuanlan.zhihu.com/p/56425081)
+
 https://www.researchgate.net/post/What_is_the_best_Reward_function_in_Reinforcement_Learning
+
 https://medium.com/@BonsaiAI/deep-reinforcement-learning-models-tips-tricks-for-writing-reward-functions-a84fe525e8e0
+
 https://stats.stackexchange.com/questions/189067/how-to-make-a-reward-function-in-reinforcement-learning
+
 https://hal.archives-ouvertes.fr/hal-00331752v2/document
+
 https://www.quora.com/How-does-one-learn-a-reward-function-in-Reinforcement-Learning-RL
+
 https://deepblue.lib.umich.edu/bitstream/handle/2027.42/136931/guoxiao_1.pdf?sequence=1&isAllowed=y
+
 https://www.analyticsindiamag.com/understanding-the-role-of-reward-functions-in-reinforcement-learning/
+
 https://www.quora.com/How-do-I-design-the-reward-function-in-reinforcement-learning-Can-I-use-the-states-and-control-signals-of-multiple-moments-Would-it-effect-the-Markov-property-or-Bellmans-Principle-of-Optimality
+
 https://ai-alignment.com/the-reward-engineering-problem-30285c779450
 
 
