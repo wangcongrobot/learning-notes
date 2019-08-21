@@ -1,6 +1,6 @@
-# Famous Group
+# RL Robotics Researchers
 
-## researcher
+## AI Robotics researchers
 
 - [Sergey Levine]()
 
@@ -25,7 +25,7 @@ Cewu Lu is a Research Professor at Shanghai Jiao Tong University (SJTU). Before 
 Independent Researcher of AI. Focus on Deep Reinforcement Learning, Meta Learning, Robot Learning
 
 
-## research group
+## AI Robotics research groups
 
 - [Google AI Robotics](https://ai.google/research/teams/brain/robotics/)
 
@@ -34,14 +34,14 @@ Our goal is to improve robotics via machine learning, and improve machine learni
 - []()
 
 
-## company
+## AI Robotics companies
 
 - [Kindred](https://www.kindred.ai/)
 
 Kindred's solutions combine AI with advanced robotics and a full suite of integration and support services to ensure optimum performance over the long term.
 
 
-## PhD
+## AI Robotics PhDs
 
 - [Stephen James](https://www.doc.ic.ac.uk/~slj12/)
 

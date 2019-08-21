@@ -98,7 +98,16 @@ A good introduction and tutorial of reinforcement learning
 
 An introductory series to Reinforcement Learning (RL) with comprehensive step-by-step tutorials.
 
-- []
+- [David-Silver-Reinforcement-learning](https://github.com/dalmia/David-Silver-Reinforcement-learning)
+
+Notes for the Reinforcement Learning course by David Silver along with implementation of various algorithms.
+
+- [100-Days-Of-ML-Code](https://github.com/MLEveryday/100-Days-Of-ML-Code)
+
+- [pumpkin-book](https://github.com/datawhalechina/pumpkin-book)
+
+南瓜书PumpkinBook
+https://datawhalechina.github.io/pumpkin-book
 
 # Reinforcement Learning Framework
 
@@ -195,6 +204,12 @@ Open source Mujoco Unity plugin for Doorgym project
   
 ROS integration of Mujoco simulator, developed by Shadow Robot.
 
+- [openai-orrb](https://github.com/openai/orrb)
+
+We present the OpenAI Remote Rendering Backend (ORRB), a system that allows fast  and customizable rendering  of robotics  environments.   It is based  on the Unity3d game engine and interfaces with the MuJoCo physics simulation library.  ORRB was designed with visual domain randomization in mind.  It is optimized for cloud deployment and high throughput operation. 
+
+
+
 ## Bullet
 
 - [bullet3](http://bulletphysics.org)
@@ -227,6 +242,10 @@ Code:
 
 Unity is another open source reinforcement learning environment, has good render.
 
+- [Unity-al-agent-toolkit](https://github.com/Unity-Technologies/ml-agents)
+
+The Unity Machine Learning Agents Toolkit (ML-Agents) is an open-source Unity plugin that enables games and simulations to serve as environments for training intelligent agents. Agents can be trained using reinforcement learning, imitation learning, neuroevolution, or other machine learning methods through a simple-to-use Python API. We also provide implementations (based on TensorFlow) of state-of-the-art algorithms to enable game developers and hobbyists to easily train intelligent agents for 2D, 3D and VR/AR games. These trained agents can be used for multiple purposes, including controlling NPC behavior (in a variety of settings such as multi-agent and adversarial), automated testing of game builds and evaluating different game design decisions pre-release. The ML-Agents toolkit is mutually beneficial for both game developers and AI researchers as it provides a central platform where advances in AI can be evaluated on Unity’s rich environments and then made accessible to the wider research and game developer communities.
+
 ## [V-REP](http://www.coppeliarobotics.com/index.html)
 
 [PyRep](https://github.com/stepjam/PyRep) is a toolkit for robot learning research, build on top of the virtual robotics experimentation platform.
@@ -255,6 +274,16 @@ Spriteworld is a python-based RL environment that consists of a 2-dimensional ar
 # Reinforcement Learning Code
 
 ## gym environment
+
+- [Contimuouscontrol](https://github.com/Jialn/ContinuousControl)
+
+Some continuous control experiemnts based on OpenAI baselines, Gym, and Mujoco. 
+
+Including:
+7bot arm physical robot reach problem; 
+Ping-pong Game in mujoco; 
+Spider/Humanoid robot walking. 
+
 
 - [gym-kuka-mujoco](https://github.com/HarvardAgileRoboticsLab/gym-kuka-mujoco)
 
@@ -400,6 +429,10 @@ Simulator of UR5 robotic arm with Robotiq 2 finger gripper, built with MuJoCo.
 
 Python wrapper over OpenRave's IKFast inverse kinematics solver for a UR5 robot arm.
 
+- [mujoco-ur5-model](https://github.com/roboticsleeds/mujoco_ur5_model)
+
+Mujoco Model for UR5-Ridgeback-Robotiq Robot 
+
 ## ROS Gazebo
 
 - [Robotics AI mobile manipulation](https://github.com/sudhakaranjain/Robotics_AI)
@@ -415,6 +448,15 @@ A TIAGo environment used for manipulation tasks learning based on ros and openai
 A reinforcement-Learning Framework for testing learning agents on a UR5 manipulator. The framework consists of 2 ROS packages which are rl_gazebo_sim, rl_moveit_config. Besides the two ROS packages there is the folder rl-gym with contains an OpenAI Gym environment as well as python scripts for runnin reinforcement learning. The rl-gym folder is an implementation example on how to use the framework with OpenAI Gym
 
 The framework is designed and prepared for screwing tasks meanning the simulated UR5 is fitted with a screw tool and the world is fitted with a block with a screw.
+
+- [AS_6Dof_Arm](https://github.com/yao62995/AS_6Dof_Arm)
+
+robot arm by ROS & Moveit, Train Deep Reinforcement Algorithms
+
+- [gym-sawyer](https://github.com/rlworkgroup/gym-sawyer)
+
+Sawyer environments for reinforcement learning that use the OpenAI Gym interface, as well as Dockerfiles with ROS to communicate with the real robot or a simulated one with Gazebo.
+
 
 ## V-REP
 
@@ -510,12 +552,15 @@ This projects
 
 - [ddpg](https://github.com/pemami4911/deep-rl)
 
-- []()
+- [autoregressive policies (ARPs)](https://github.com/kindredresearch/arp)
 
+This repository provides the implementation of autoregressive policies (ARPs) for continuous control deep reinforcement learning together with learning examples based on Open AI Baselines PPO and TRPO algorithms. The examples are provided for OpenAI Gym Mujoco environments and for Square sparse reward environment, discussed in the paper.
 
+Using UR5 
 
+- [udacity-drl](https://github.com/udacity/deep-reinforcement-learning)
 
-
+Deep Reinforcement Learning Nanodegree program https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893#
 
 # Reinforcement Learning Resources
 
