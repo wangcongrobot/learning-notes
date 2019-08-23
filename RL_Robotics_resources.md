@@ -10,6 +10,10 @@ __*Talk is cheap. Show me the code. --- Linus Torvalds*__
 
 [TOC]
 
+## Overview
+	- [Code](#code)
+	- [code](#reinforcement-learning-framework)
+
 # Manipulation and Grasping with Deep Reinforcement Learning
 
 ## Code
@@ -109,6 +113,20 @@ Notes for the Reinforcement Learning course by David Silver along with implement
 南瓜书PumpkinBook
 https://datawhalechina.github.io/pumpkin-book
 
+- [强化学习路在何方？](https://zhuanlan.zhihu.com/p/39999667)
+
+- [Deep Reinforcement Learning Doesn't Work Yet](https://www.alexirpan.com/2018/02/14/rl-hard.html)
+
+- [[Model-based]基于模型的强化学习论文合集](https://zhuanlan.zhihu.com/p/72642285)
+
+- [前沿强化学习问题](https://zhuanlan.zhihu.com/p/47602043)
+
+- [强化学习资料](https://zhuanlan.zhihu.com/p/77123184)
+
+- [good blog](https://blog.csdn.net/jinzhuojun?t=1)
+
+- [RL-noise](https://zhuanlan.zhihu.com/p/78601257)
+
 # Reinforcement Learning Framework
 
 - [OpenAI gym](https://gym.openai.com/)
@@ -183,6 +201,12 @@ Dopamine is a research framework for fast prototyping of reinforcement learning 
 # Reinforcement Learning Simulation
 
 Introduce some useful simulators.
+
+## [SimBenchmark](https://leggedrobotics.github.io/SimBenchmark/)
+
+Physics engine benchmark for robotics applications: RaiSim vs. Bullet vs. ODE vs. MuJoCo vs. DartSim
+
+SimBenchmark provides benchmark results of contact simulation on the state-of-the-art physics engines for various robotic tasks.
 
 ## Mujoco
 
@@ -284,10 +308,42 @@ Including:
 Ping-pong Game in mujoco; 
 Spider/Humanoid robot walking. 
 
+- [cassie-mujoco-sim](https://github.com/osudrl/cassie-mujoco-sim)
+
+A simulation library for Agility Robotics' Cassie robot using MuJoCo
+
+- [cassie-trajectory-editor](https://github.com/osudrl/cassie-trajectory-editor)
+
+MuJoCo trajectory editor for walking robots
+
+- [gym-cassie](https://github.com/p-morais/gym-cassie)
+
+An OpenAI Gym style reinforcement learning interface for Agility Robotics' biped robot Cassie
+
+- [Cassie-Robot-Resources](https://github.com/UBCMOCCA/Cassie_Robot_Resources)
+
+
+list of papers, videos and codes about the bipedal robot Cassie developed by Agility Robotics
+
+- [marathon-envs](https://github.com/Unity-Technologies/marathon-envs)
+
+A set of high-dimensional continuous control environments for use with Unity ML-Agents Toolkit.
 
 - [gym-kuka-mujoco](https://github.com/HarvardAgileRoboticsLab/gym-kuka-mujoco)
 
 An OpenAI gym environment for the Kuka arm, using Mujoco simulator.
+
+- [pybullet-robot-envs](https://github.com/robotology-playground/pybullet-robot-envs)
+
+pybullet-robot-envs is a Python package that collects robotic environments based on the **PyBullet** simulator, suitable to develop and test Reinforcement Learning algorithms on simulated **grasping** and **manipulation** applications.
+
+The pybullet-robot-envs inherit from the **OpenAI Gym** interface.
+
+The package provides environments for the **iCub Humanoid robot** and the **Franka Emika Panda manipulator**.
+
+Run the following scripts to train and test the implemented environments with standard **DDPG** algorithm from **Stable Baselines**.
+
+Here is a [introduction](https://github.com/robotology-playground/pybullet-robot-envs/blob/master/pybullet_robot_envs/README.md) of the robot env and task env.
 
 - [gym-drake](https://github.com/HarvardAgileRoboticsLab/gym-drake)
 
@@ -457,6 +513,16 @@ robot arm by ROS & Moveit, Train Deep Reinforcement Algorithms
 
 Sawyer environments for reinforcement learning that use the OpenAI Gym interface, as well as Dockerfiles with ROS to communicate with the real robot or a simulated one with Gazebo.
 
+- [navbot](https://github.com/marooncn/navbot)
+
+Using RGB Image as Visual Input for Mapless Robot Navigation
+
+[Project introduction](
+https://mp.weixin.qq.com/s?__biz=Mzg2MjExNjY5Mg==&mid=2247483714&idx=1&sn=449c6c1b00272d31b9093e8ae32e5ca5&chksm=ce0d8f79f97a066fcc5929cdbd0fc83ce8412eaf9d97a5c51ed16799d7e8a401027dc3bb6486&mpshare=1&scene=1&srcid=&pass_ticket=9Mwfi8nrJduWesFYZOvfaN1uXqSrd%2B2CuQl%2FzqbUNmBAfv%2Bx%2BxgJyw8xSQfYkcsl#rd)
+
+- [gym introduction](https://zhuanlan.zhihu.com/p/26985029)
+
+
 
 ## V-REP
 
@@ -480,16 +546,29 @@ TF-Agents: A library for reinforcement learning in tensorflow.
 
 A fork of OpenAI Baselines, implementations of reinforcement learning algorithms. http://stable-baselines.readthedocs.io/
 
+- [robot-agents-train](https://github.com/eleramp/robot-agents)
 
-- [coach](https://nervanasystems.github.io/coach/)
+Robot-agents is a Python toolkit to develop and test Reinforcement Learning algorithms on robotic **manipulation** tasks.
+
+Including: 
+  openai_baselines: ddpg
+  stable_baselines: ddpg, deepq, sac
+
+- [Coach](https://nervanasystems.github.io/coach/) (By Nervana Systems)
 
 Coach, developed by Intel AI lab, is a python reinforcement learning framework containing implementation of many state-of-the-art algorithms.
 
+- [Keras-RL](https://github.com/keras-rl/keras-rl)
 
+Deep Reinforcement Learning for Keras. http://keras-rl.readthedocs.io/
 
 - [tensorforce](https://github.com/tensorforce/tensorforce)
 
 Tensorforce: a TensorFlow library for applied reinforcment learning
+
+- [tensorlayer](https://github.com/tensorlayer/tensorlayer)
+
+Deep Learning and Reinforcement Learning Library for Scientists http://tensorlayer.readthedocs.io
 
 - [softlearning](https://github.com/rail-berkeley/softlearning)
 

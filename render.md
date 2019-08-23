@@ -1,6 +1,13 @@
 
 # render mujoco_py
 
+There is an altenetial option to render, with user' implement.
+
+https://blog.csdn.net/jianghao_ava/article/details/80874254
+
+https://github.com/openai/mujoco-py/issues/44
+
+
 ```python
 #!/usr/bin/env python3
 """

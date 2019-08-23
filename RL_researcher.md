@@ -31,7 +31,13 @@ Independent Researcher of AI. Focus on Deep Reinforcement Learning, Meta Learnin
 
 Our goal is to improve robotics via machine learning, and improve machine learning via robotics. We foster close collaborations between machine learning researchers and roboticists to enable learning at scale on real and simulated robotic systems.
 
-- []()
+- [UCB-Robotic AI & Learning Lab (RAIL)](http://rail.eecs.berkeley.edu/)
+
+Sergey Levine
+
+- [Berkeley Artificial Intelligence Research Lab (BAIR)]()
+
+Pieter Abbeel
 
 
 ## AI Robotics companies
@@ -62,3 +68,13 @@ BA in Math and Computer Science @ UC Berkeley
 
 
 
+Jessy Grizzle的Hybrid Zero Dynamics,第一个（？）成功在双足机器人上实现动态平衡的控制方法。
+Jerry Pratt的capture point，最初应用于双足机器人平衡控制，还可以用来做脚步规划。
+Emo Todorov，一系列用differential dynamic programming做MPC的工作。
+Stefan Schaal，一系列用dynamic movement primitive做控制的工作。
+Jonathan Hurst，基于spring loaded inverted pendulum模型设计双足机器人。
+
+作者：Ming
+链接：https://www.zhihu.com/question/47316285/answer/567523900
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
