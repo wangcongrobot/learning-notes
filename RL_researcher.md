@@ -39,6 +39,8 @@ Sergey Levine
 
 Pieter Abbeel
 
+- [MIT-CSAIL](https://www.csail.mit.edu/)
+
 
 ## AI Robotics companies
 

@@ -119,7 +119,7 @@ def make_atari_env(env_id, num_env, ...):  # 这里的num_env为8，意味着会
     return SubprocVecEnv([make_env(i + start_index) for i in range(num_env)])　
 ```
 
-创建num_env个元素（这里为８）的数组，每一个元素为一个函数闭包_thunk()。VecEnv实现在baselines/common/vec_env/__init__.py，它是一个抽象类，代表异步向量化环境。其中包括几个重要的抽象函数： 
+创建num_env个元素（这里为８）的数组，每一个元素为一个函数闭包_thunk()。VecEnv实现在baselines/common/vec_env/\__init__.py，它是一个抽象类，代表异步向量化环境。其中包括几个重要的抽象函数： 
 reset()用于重置所有环境，step_async()用于通知所有环境开始根据给定动作执行一步，step_wait()得到执行完的结果。step_wait()等待step_async()的结果。step()就是step_async() 加上step_wait()。而VecEnvWrapper也为VecEnv的继承类，和gym中提供的Wrapper功能类似，如果要对VecEnv实现的默认行为做修改的话就可以利用它。
 
 上面函数最后返回的SubprocVecEnv类为VecEnv的继承类，它主要将上面创建好的函数放到各个子进程中去执行。在SubprocVecEnv实现类中，构造时传入在子进程中执行的函数。通过Process创建子进程，并通过Pipe进行进程间通信。make_atari_env()中创建SubprocVecEnv后，又立马被VecFrameStack封装了一把。VecFrameStack为VecEnvWrapper的实现类，实现在vec_frame_stack.py。在VecFrameStack的构造函数中，wos为gym环境中的原始状态空间，维度为[84,84,1]。low和high分别为这些维度的最低和最高值。stackedobs就是把几个环境的状态空间叠加起来，即维度变为(8, 84, 84, 4)。8为环境个数，(84,84)为单帧状态维度，也就是游戏的屏幕输出，4代表最近4帧（因为会用最近4的帧的游戏画面来作为网络模型的输入）。

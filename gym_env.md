@@ -4,6 +4,7 @@
 
 http://gym.openai.com/docs/
 
+https://github.com/openai/gym/blob/master/docs/creating-environments.md
 
 ### Observations
 
@@ -523,7 +524,26 @@ for t in range(100):
 print(count)             #打印该次尝试的步数
 ```
 
+## Some gym function and example
 
+1. Monitor
+
+
+```python
+
+    # You can set the level to logger.DEBUG or logger.WARN if you
+    # want to change the amount of output.
+    logger.set_level(logger.INFO)
+
+    # You provide the directory to write to (can be an existing
+    # directory, including one with existing data -- all monitor files
+    # will be namespaced). You can also dump to a tempdir if you'd
+    # like: tempfile.mkdtemp().
+    outdir = '/tmp/random-agent-results'
+    env = wrappers.Monitor(env, directory=outdir, force=True)
+
+
+```
 
 
 

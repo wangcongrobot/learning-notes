@@ -110,6 +110,8 @@ Notes for the Reinforcement Learning course by David Silver along with implement
 
 - [pumpkin-book](https://github.com/datawhalechina/pumpkin-book)
 
+- [DRL-debug-tips](https://zhuanlan.zhihu.com/p/31810802)
+
 南瓜书PumpkinBook
 https://datawhalechina.github.io/pumpkin-book
 
@@ -126,6 +128,8 @@ https://datawhalechina.github.io/pumpkin-book
 - [good blog](https://blog.csdn.net/jinzhuojun?t=1)
 
 - [RL-noise](https://zhuanlan.zhihu.com/p/78601257)
+
+- [RL-interview](https://zhuanlan.zhihu.com/p/33133828)
 
 # Reinforcement Learning Framework
 
@@ -201,6 +205,8 @@ Dopamine is a research framework for fast prototyping of reinforcement learning 
 # Reinforcement Learning Simulation
 
 Introduce some useful simulators.
+
+[Tools for dynamics simulation of robots: a survey based on user feedback](https://arxiv.org/pdf/1402.7050.pdf)
 
 ## [SimBenchmark](https://leggedrobotics.github.io/SimBenchmark/)
 
@@ -333,6 +339,10 @@ A set of high-dimensional continuous control environments for use with Unity ML-
 
 An OpenAI gym environment for the Kuka arm, using Mujoco simulator.
 
+- [Kuka-bullet-for-pick-and-place](https://github.com/cb614611757/Kuka_Pybullet-for-pick-and-place)
+
+Kuka_Pybullet for pick and place This script can be used for the research of robotic reinforcement learning. The script builds a simulation environment for robot manipulation about pick and place based on the pybullet simulation environment. Users can incorporate this environment into the reinforcement learning algorithm for online data collec… 
+
 - [pybullet-robot-envs](https://github.com/robotology-playground/pybullet-robot-envs)
 
 pybullet-robot-envs is a Python package that collects robotic environments based on the **PyBullet** simulator, suitable to develop and test Reinforcement Learning algorithms on simulated **grasping** and **manipulation** applications.
@@ -344,6 +354,8 @@ The package provides environments for the **iCub Humanoid robot** and the **Fran
 Run the following scripts to train and test the implemented environments with standard **DDPG** algorithm from **Stable Baselines**.
 
 Here is a [introduction](https://github.com/robotology-playground/pybullet-robot-envs/blob/master/pybullet_robot_envs/README.md) of the robot env and task env.
+
+How to train the robot using [baselines](https://github.com/eleramp/robot-agents).
 
 - [gym-drake](https://github.com/HarvardAgileRoboticsLab/gym-drake)
 
@@ -505,6 +517,10 @@ A reinforcement-Learning Framework for testing learning agents on a UR5 manipula
 
 The framework is designed and prepared for screwing tasks meanning the simulated UR5 is fitted with a screw tool and the world is fitted with a block with a screw.
 
+- [Ur5_DRL](https://github.com/yuecideng/Ur5_DRL)
+
+This is a project about robotic manipulation motion planning using deep reinforcement learning based on ROS and Gazebo simulation
+
 - [AS_6Dof_Arm](https://github.com/yao62995/AS_6Dof_Arm)
 
 robot arm by ROS & Moveit, Train Deep Reinforcement Algorithms
@@ -522,7 +538,17 @@ https://mp.weixin.qq.com/s?__biz=Mzg2MjExNjY5Mg==&mid=2247483714&idx=1&sn=449c6c
 
 - [gym introduction](https://zhuanlan.zhihu.com/p/26985029)
 
+- [HorizonRobotics-SocialRobot](https://github.com/HorizonRobotics/SocialRobot)
 
+A python environment for developing interactive learning agent with language communication ability. Using **Gazebo** and **OpenAI gym**.
+
+We provide OpenAI gym interfaces to easily apply different RL algorithms into these different environments. 
+
+Robot: navigation, iCub, PR2. Using [Agent Learning Framework (ALF)](https://github.com/HorizonRobotics/alf) to train the model.
+
+Agent Learning Framework (ALF) is a reinforcement learning framework emphasizing on the flexibility of writing complex model architectures. ALF is built on **Tensorflow 2.0**.
+
+Algorithms: A2C, DDPG, PPO, SAC, ICM, MERLIN
 
 ## V-REP
 
@@ -579,6 +605,19 @@ Softlearning is a reinforcement learning framework for training maximum entropy 
 Collection of reinforcement learning algorithms.
 
 Reinforcement learning framework and algorithms implemented in **PyTorch**.
+
+- [rlpyt](https://github.com/astooke/rlpyt)
+
+Deep Reinforcement Learning in PyTorch
+Modular, optimized implementations of common deep RL algorithms in PyTorch, with unified infrastructure supporting all three major families: policy gradient, deep-q learning, and q-function policy gradient. Intended to be a high-throughput code-base for small- to medium-scale research (large-scale meaning like OpenAI Dota with 100's GPUs). 
+
+- [Chainer-rl](https://github.com/chainer/chainerrl)
+
+hainerRL is a deep reinforcement learning library that implements various state-of-the-art deep reinforcement algorithms in Python using [Chainer](https://github.com/chainer/chainer), a flexible deep learning framework.
+
+- [chainerrl-mujoco-tasks](https://github.com/chainer/chainerrl/tree/master/examples/mujoco)
+
+Using chainerrl to train the rl model in mujoco simulation.
 
 - [Minimal and Clean RL Examples](https://github.com/rlcode/reinforcement-learning)
 
@@ -641,6 +680,12 @@ Using UR5
 
 Deep Reinforcement Learning Nanodegree program https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893#
 
+- [for-ai-rl](https://github.com/for-ai/rl)
+
+Generic reinforcement learning codebase in TensorFlow
+
+
+
 # Reinforcement Learning Resources
 
 
@@ -673,5 +718,11 @@ For now, most robots can be controlled using ROS. So how to using the reinforcem
 Developed by xxx, the useful tool to use RL in ROS.
 
 
+## RL tools
 
+### Visualization
+
+- [chainerrl-visualizer](https://github.com/chainer/chainerrl-visualizer)
+
+You can analyze ChainerRL agent's behavior in well visualized way, making debugging easier.
 
