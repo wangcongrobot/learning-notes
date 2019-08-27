@@ -501,6 +501,8 @@ Python wrapper over OpenRave's IKFast inverse kinematics solver for a UR5 robot 
 
 Mujoco Model for UR5-Ridgeback-Robotiq Robot 
 
+- [Berkeley Open Arms - Blue](https://github.com/berkeleyopenarms)
+
 ## ROS Gazebo
 
 - [Robotics AI mobile manipulation](https://github.com/sudhakaranjain/Robotics_AI)
@@ -558,6 +560,10 @@ mobile robot rl demo
 
 
 # Reinforcement Learning Algorithms
+
+https://medium.com/@vermashresth/a-primer-on-deep-reinforcement-learning-frameworks-part-1-6c9ab6a0f555
+
+https://medium.com/data-from-the-trenches/choosing-a-deep-reinforcement-learning-library-890fb0307092
 
 
 - [OpenAI Baselines](https://github.com/openai/baselines)

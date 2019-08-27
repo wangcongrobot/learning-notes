@@ -2,6 +2,9 @@
 
 https://www.andrewszot.com/blog/machine_learning/reinforcement_learning/gym_with_mujoco
 
+https://www.andrewszot.com/blog/machine_learning/reinforcement_learning/gym_with_mujoco
+
+[TOC]
 
 ### useful function
 
@@ -75,7 +78,7 @@ After setting them all with caution, all the gripers could then have fraction to
 
 
 
-### Set up custom openai gym env with mujoco
+### Blog: Set up custom openai gym env with mujoco
 
 http://deepwater.xin/wp-content/uploads/2019/02/set%20up%20custom%20openai%20gym%20env%20with%20mujoco.html
 

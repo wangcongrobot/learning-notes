@@ -48,6 +48,22 @@ Pieter Abbeel
 
 Kindred's solutions combine AI with advanced robotics and a full suite of integration and support services to ensure optimum performance over the long term.
 
+- [Preferred Networks](https://preferred.jp/en/)
+
+  - [Optuna](https://preferred.jp/en/projects/optuna/): Optuna™, an open-source automatic hyperparameter optimization framework, automates the trial-and-error process of optimizing the hyperparameters.
+
+  - [Chainer](https://preferred.jp/en/projects/chainer/): Chainer™ is a Python-based deep learning framework developed and provided by PFN, which has unique features and powerful performance that allow for designing complex neural networks easily and intuitively, thanks to its Eager Execution approach. Since it was open-sourced in June 2015, as one of the most popular frameworks, Chainer has attracted not only the academic community but also many industrial users who need a flexible framework to harness the power of deep learning in their research and real-world applications.
+
+- [Osaro](www.osaro.com)
+
+OSARO is an industrial grade AI software company based in San Francisco specializing in vision and control systems for robots. Our product is OsaroPick, which integrates with automated storage and retrieval systems (ASRS) to perform various picking and placing tasks and enable fully automated distribution centers.
+
+- [Covariant](www.covariant.ai)
+
+Vicarious is developing artificial general intelligence for robots. By combining insights from generative probabilistic models and systems neuroscience, our architecture trains faster, adapts more readily, and generalizes more broadly than robotics approaches commonly used today.
+
+- [vicarious](www.vicarious.com)
+
 
 ## AI Robotics PhDs
 
