@@ -1,5 +1,18 @@
 # How to use stable-baselines to train a custom model
 
+rl-baselines-zoo has some scripts to train the model, it's good example to learn how to use stable-baselines.
+
+## How to use multiprocessing 
+
+just add *mpirun -np num_cpu* in the front of nomal python code in bash:
+
+$ mpirun -np 4 python xxxxxx
+
+## How to save and continue the taining process
+
+In stable-baselines, we can save a training model and resume it in the new training process.
+
+Saving as much as detailed parameters in tensorboad is important.
 
 ## example
 
@@ -235,11 +248,82 @@ model.learn(100000, callback=callback)
 ```
 
 
+https://github.com/openai/baselines/issues/597
+
+Hi @hellandhansen
+
+Personally I changed a little bit the PPO2 code and I use instead tf.train.Saver.
+
+I modified the save and load function in the Model object
+```python
+def save(save_path):
+           """
+           Save the model
+           """
+           saver = tf.train.Saver()
+           saver.save(sess, save_path)
+
+def load(load_path):
+           """
+           Load the model
+           """
+           saver = tf.train.Saver()
+           print('Loading ' + load_path)
+           saver.restore(sess, load_path)
+```
+And the training part of the learn function
+```python
+`savepath = "./models/" + str(update) + "/model.ckpt"
+model.save(savepath)
+print('Saving to', savepath)`
+```
+If you need the complete implementation check here https://github.com/simoninithomas/Deep_reinforcement_learning_Course/tree/master/PPO%20with%20Sonic%20the%20Hedgehog
+Hope it helps,
 
 
+The openai baselines code within it's logger module contains support for tensorboard logging. The stable baselinses code still retains this same logging code. You can activate it via:
+```python
+    from stable_baselines import logger
+    print( 'Configuring stable-baselines logger')
+    logger.configure()
+```
+To control the location where the logs are stores, set the OPENAI_LOGDIR environment variable to a location on your file system. To control the formats of data that are logged (and to enable tensorboard logging), set the OPENAI_LOG_FORMAT environment variable to "stdout,tensorboard".
+
+This form of tensorboard logging does fine across multiple calls to training and yields the same statistics as openai baselines. (Useful for comparing performance across the two forks.)
+
+Here's a comparison of an algorithm running on an environment but with different numbers of timestemps per learning call (1e5, 1e6, 1e9).
+
+More complete snippet that I'm using right now:
+```py
+basedir = '/some/directory'
+
+try:
+    os.makedirs(basedir)
+    print("Directory " , basedir ,  " created ")
+except FileExistsError:
+    pass
+
+os.environ[ 'OPENAI_LOGDIR' ] = basedir
+os.environ[ 'OPENAI_LOG_FORMAT' ] = 'stdout,tensorboard'
+
+from stable_baselines import logger
+print( 'Configuring stable-baselines logger')
+logger.configure()
+```
+Full code for reference:
+https://github.com/jrjbertram/jsbsim_rl/blob/d65d63fe5e3b4e8ac9be580744b0242ab86eafee/compare.py
 
 
+Hello,
 
+I am mostly concerned about obscure state such as optimizer's internal variables.
+
+that is a good question. I think there are different things that are not currently stored which prevent from a perfect recover from previous training:
+
+the content of replay buffer is not saved for off-policy methods (for disk usage reason)
+the state of the optimizer (e.g. Adam) is not saved
+the learning rate schedule may be reset when reloading a model / resuming training
+However, despite those caveats, I did not experience huge drop in performance (yet) when resuming training.
 
 
 

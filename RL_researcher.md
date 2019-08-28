@@ -44,6 +44,8 @@ Pieter Abbeel
 
 ## AI Robotics companies
 
+https://www.ventureradar.com/keyword/Reinforcement%20learning
+
 - [Kindred](https://www.kindred.ai/)
 
 Kindred's solutions combine AI with advanced robotics and a full suite of integration and support services to ensure optimum performance over the long term.

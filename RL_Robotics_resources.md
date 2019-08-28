@@ -427,7 +427,7 @@ Open source domain randomized door opening training environment.
 
 - [raisimGym](https://github.com/leggedrobotics/raisimGym)
 
-raisimGym is an example of a gym environment using raisim. It uses stable-baselines (https://github.com/hill-a/stable-baselines) for training and pybind11 (https://github.com/pybind/pybind11) for wrapping raisim in python.
+raisimGym is an example of a gym environment using raisim, from ETH. It uses stable-baselines (https://github.com/hill-a/stable-baselines) for training and pybind11 (https://github.com/pybind/pybind11) for wrapping raisim in python.
 
 - [SpotmicroAI](https://github.com/FlorianWilk/SpotMicroAI)
 
@@ -502,6 +502,10 @@ Python wrapper over OpenRave's IKFast inverse kinematics solver for a UR5 robot 
 Mujoco Model for UR5-Ridgeback-Robotiq Robot 
 
 - [Berkeley Open Arms - Blue](https://github.com/berkeleyopenarms)
+
+- [blue-mujoco-gym](https://github.com/berkeleyopenarms/blue_mujoco_v1)
+
+
 
 ## ROS Gazebo
 
@@ -731,4 +735,22 @@ Developed by xxx, the useful tool to use RL in ROS.
 - [chainerrl-visualizer](https://github.com/chainer/chainerrl-visualizer)
 
 You can analyze ChainerRL agent's behavior in well visualized way, making debugging easier.
+
+## RL debug and fine-tuning
+
+https://zhuanlan.zhihu.com/p/77667356
+https://zhuanlan.zhihu.com/p/72586697
+
+understand the gym: https://zhuanlan.zhihu.com/p/28086233
+
+https://blog.csdn.net/u013166171/article/details/89139756
+
+## Working with real robots
+
+https://s-rl-toolbox.readthedocs.io/en/latest/guide/real_robots.html
+
+
+
+
+
 
