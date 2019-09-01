@@ -41,6 +41,9 @@ Pieter Abbeel
 
 - [MIT-CSAIL](https://www.csail.mit.edu/)
 
+- [Standord Vision & Learning Lab](http://svl.stanford.edu/)
+
+- [Robot Learning Lab Georgia Tech](https://robotlearning.gatech.edu/)
 
 ## AI Robotics companies
 
@@ -49,6 +52,10 @@ https://www.ventureradar.com/keyword/Reinforcement%20learning
 - [Kindred](https://www.kindred.ai/)
 
 Kindred's solutions combine AI with advanced robotics and a full suite of integration and support services to ensure optimum performance over the long term.
+
+- [Bonsai](https://www.bons.ai/)
+
+
 
 - [Preferred Networks](https://preferred.jp/en/)
 
@@ -82,12 +89,6 @@ BA in Math and Computer Science @ UC Berkeley
 
 - []()
 
-
-
-
-
-
-
 Jessy Grizzle的Hybrid Zero Dynamics,第一个（？）成功在双足机器人上实现动态平衡的控制方法。
 Jerry Pratt的capture point，最初应用于双足机器人平衡控制，还可以用来做脚步规划。
 Emo Todorov，一系列用differential dynamic programming做MPC的工作。
@@ -98,3 +99,72 @@ Jonathan Hurst，基于spring loaded inverted pendulum模型设计双足机器�
 链接：https://www.zhihu.com/question/47316285/answer/567523900
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+## Pieter Abbeel
+
+
+
+## Stefan Schaal 
+
+
+####
+
+- [Jens Kober](http://www.jenskober.de/)
+https://www.linkedin.com/in/jens-kober/
+PhD from Jan Peter
+Editor for TRO
+
+
+Stefan Schaal
+
+
+The Computational Learning and Motor Control Lab
+
+[
+Max-Planck-Institute for Intelligent Systems (MPI-IS)](
+
+https://am.is.tuebingen.mpg.de/)
+
+http://learning-systems.org/
+
+
+
+https://robovalley.com/
+
+- [Justus H. Piater](https://iis.uibk.ac.at/)
+
+- [Michael Mistry](http://homepages.inf.ed.ac.uk/mmistry/index.html)
+
+- [Jan Peters](https://www.ias.informatik.tu-darmstadt.de/Team/JanPeters)
+
+- [Dr. Jonas Buchli]()
+
+DeepMind Robotics
+
+https://zhuanlan.zhihu.com/p/31620093
+
+- [Aude Billard]()
+
+EPFL
+Editor for TRO
+
+- [Sylvain Calinon]()
+
+Idiap Research Institute
+Editor for TRO
+
+- []()
+
+https://www.ieee-ras.org/robot-learning
+
+ -[Gerhard Neumann](http://computational-learning.net/)
+
+computational Learning for Autonomous Systems (CLAS) team which is part of the Lincoln Centre for Autonomous Systems(LCAS).
+ with Prof. Jan Peters
+
+
+
+ Vincent Vanhoucke Google Brain
+ Abhinav Gupta CMU
+ Rais Hadsell DeepMind

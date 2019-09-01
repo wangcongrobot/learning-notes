@@ -401,3 +401,57 @@ def _check_contact(self):
     return collision
 ```
 
+## [DoorGym](https://github.com/PSVL/DoorGym/)
+
+In order to incentivize the agent to open the door, the following shaped reward function is used:
+$ r_t = -a_0 d_t - a_1 \log(d_t+\alpha)-a_2o_t-a_3\sqrt{u_t^2}+a_4\phi_t+a_5\psi_t $
+where $d_t$ is the distance between the fingertip of the end-effector and the center coordinate of the doorknob, second logarithm distance term has been added to give a precision when the agent get close to a target, $\alpha$ are set to 0.005, $o_t$ is the difference between the current fingertip orientation of the robot and the ideal orientation to hook/grip teh doorknob, $u_t$ is the control input to the system, $\phi_t$ is the angle of the door, and $\psi_t$ is the angle of the door knob. The $t$ subscript indicates the value at time $t$. Weights are set to $a_0=1.0$, $a_1=1.0$, $a_2=1.0$, $a_3=1.0$, $a_4=30.0$, and $a_5=50.0$. When using the pull knob, door knob angle $\psi$ is ignored.
+
+For evaluation purposes we present two unshaped reward functions. We define a successful attempt as the robot opening the door at least 0.2 radians within 10 seconds. For attempt i, it can be expressed as 
+$$ \mathbb{1}  $$
+
+```python
+
+def step(self, a):
+
+    if not self.unity and self.no_viewer:
+        print("made mujoco viewer")
+        self.viewer = self._get_viewer('human')
+        self.viewer_setup()
+        self.no_viewer = False
+
+    reward_dist = -np.linalg.norm(self.get_dist_vec())
+    reward_log_dist = -np.log(np.square(np.linalg.norm(reward_dist))+5e-3) - 5.0
+    reward_ori = - np.linalg.norm(self.get_ori_diff_no_xaxis())
+    reward_door = abs(self.sim.data.get_joint_qpos("hinge0")) * 30
+
+    if self.xml_path.find("gripper")>-1:
+        reward_ctrl = - np.mean(np.square(a[:-2]))
+    else:
+        reward_ctrl = - np.mean(np.square(a))
+
+    if self.xml_path.find("lever")>-1 or self.xml_path.find("round")>-1:
+        reward_doorknob = abs(self.sim.data.get_joint_qpos("hinge1")) * 50
+        reward = reward_door + reward_doorknob + reward_ctrl + reward_ori + reward_dist + reward_log_dist
+    else:
+        reward = reward_door + reward_ctrl + reward_ori + reward_dist + reward_log_dist
+    
+    if self.init_done and self.xml_path.find("gripper")>-1:
+        self.gripper_action = np.array([a[-1], -a[-1], a[-1], -a[-1]])
+        a = np.contatenate((a, self.gripper+action))
+
+    self.do_simulation(a, self.frame_skip)
+    ob = self._get_obs()
+    done = False
+
+    if self.init_done and self.unity:
+        self.remote.setqpos(self.sim.data.qpos)
+    
+    self.tt += 1
+    return ob, reward, done, dict(reward_dist=reward_dist, reward_ctrl=reward_ctrl)
+```
+
+## Surreal
+
+**Nut-and-peg Assembly:** Two colored pegs are mounted to the tabletop. The Sawyer robot needs to declutter the nuts lying on top of each other and assemble them onto their corresponding pegs. Each episode lasts for 2000 timesteps. Each step receives reward at most 4 (at most 8000 for an entire episode). The initial positions and orientations of the nuts are randomized. Object features contain the position and orientation of the gripper, positions and orientaions of the nuts and their positions and orientaions with respect to the gripper. Reward 1 is given to every object successfully placed into the bin. An additional reward max(r1, r2, r3, r4) is given to 1)$r_1\leq0.1$: placing the gripper near an unplaced nut, 2)$r_2\leq0.35$: touching an unplacecd nut, 3)$r_3\leq0.5$: lifting an unplaced nut or 4)$r_4\leq0.7$: hovering an unplaced nut over the desired hole.
+

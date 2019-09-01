@@ -238,7 +238,11 @@ ROS integration of Mujoco simulator, developed by Shadow Robot.
 
 We present the OpenAI Remote Rendering Backend (ORRB), a system that allows fast  and customizable rendering  of robotics  environments.   It is based  on the Unity3d game engine and interfaces with the MuJoCo physics simulation library.  ORRB was designed with visual domain randomization in mind.  It is optimized for cloud deployment and high throughput operation. 
 
+- [mjcf](https://github.com/iandanforth/mjcf)
 
+Python Library for MuJoCo Format model xml.
+
+generate Mujoco format xml files from python classes
 
 ## Bullet
 
@@ -251,6 +255,12 @@ Bullet Physics SDK: real-time collision detection and multi-physics simulation f
 PyBullet Gymperium is an open-source implementation of the OpenAI Gym MuJoCo environments for use with the OpenAI Gym Reinforcement Learning Research Platform in support of open research.
 
 (https://github.com/bulletphysics/bullet3)
+
+- [NTP-vat-release](https://github.com/StanfordVL/NTP-vat-release)
+
+gripper grasp
+
+- [Gibson Env: Real-World Perception for Embodied Agents](https://github.com/StanfordVL/GibsonEnv)
 
 ## Gazebo
 
@@ -590,6 +600,10 @@ Including:
   openai_baselines: ddpg
   stable_baselines: ddpg, deepq, sac
 
+- [pytorch-a2c-ppo-acktr-gail](https://github.com/ikostrikov/pytorch-a2c-ppo-acktr-gail)
+
+PyTorch implementation of Advantage Actor Critic (A2C), Proximal Policy Optimization (PPO), Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation (ACKTR) and Generative Adversarial Imitation Learning (GAIL).
+
 - [Coach](https://nervanasystems.github.io/coach/) (By Nervana Systems)
 
 Coach, developed by Intel AI lab, is a python reinforcement learning framework containing implementation of many state-of-the-art algorithms.
@@ -693,6 +707,22 @@ Deep Reinforcement Learning Nanodegree program https://www.udacity.com/course/de
 - [for-ai-rl](https://github.com/for-ai/rl)
 
 Generic reinforcement learning codebase in TensorFlow
+
+
+
+
+## Working with real robots (Sim2Real)
+
+https://github.com/iandanforth/mjcf
+
+
+- [Deep-RL-Sim2Real](https://github.com/harry-uglow/Deep-RL-Sim2Real)
+
+Main development repository for MEng in Computing (Artificial Intelligence) final project titled "Deep Reinforcement Learning in Simulation with Real-world Fine Tuning". Project aims to develop a pipeline for learning robotic control tasks by first training in simulation before transferring to a real robot.
+Using **Sawyer** robot and **V-Rep** simulator, **PyTorch**.
+
+
+
 
 
 

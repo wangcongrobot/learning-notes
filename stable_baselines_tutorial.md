@@ -325,6 +325,11 @@ the state of the optimizer (e.g. Adam) is not saved
 the learning rate schedule may be reset when reloading a model / resuming training
 However, despite those caveats, I did not experience huge drop in performance (yet) when resuming training.
 
+### learning-to-drive-in-5-minutes
+
+use stable-baselines to train a model
+https://github.com/araffin/learning-to-drive-in-5-minutes/blob/master/train.py
+
 
 
 
