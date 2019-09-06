@@ -429,7 +429,11 @@ Open-Source Distributed Reinforcement Learning Framework by Stanford Vision and 
 
 - [rllab-curriculum](https://github.com/florensacc/rllab-curriculum)
 
+Refer to run_walker3d_staged_learning.py for an example on how to setup the training script for the biped walking robot.
+
 Curriculum learning
+
+- [curriculum locomotion](https://github.com/VincentYu68/SymmetryCurriculumLocomotion)
 
 - [DoorGym](https://github.com/PSVL/DoorGym)
 
@@ -733,11 +737,18 @@ Using **Sawyer** robot and **V-Rep** simulator, **PyTorch**.
 
 An educational resource to help anyone learn deep reinforcement learning.
 
+- [Inverse-Reinforcement-Learning]
+
+https://blog.csdn.net/philthinker/article/details/79778271
+
+https://github.com/MatthewJA/Inverse-Reinforcement-Learning
 
 
 # Sim2Real Problems
 
 How to transfer a model from simulation to the real robot
+
+https://github.com/harry-uglow/Deep-RL-Sim2Real
 
 ## ROS Related
 
@@ -779,6 +790,13 @@ https://blog.csdn.net/u013166171/article/details/89139756
 
 https://s-rl-toolbox.readthedocs.io/en/latest/guide/real_robots.html
 
+
+
+
+
+https://lilianweng.github.io/lil-log/
+
+Andrej Karpathy
 
 
 

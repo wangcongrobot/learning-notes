@@ -17,6 +17,8 @@ Catalyst.RL: A Distributed Framework for Reproducible RL Research https://arxiv.
 
 - [ray](https://github.com/ray-project/ray)
 
+https://www.reddit.com/r/MachineLearning/comments/8aimei/d_what_is_the_right_way_to_parallelize_rollouts/
+
 - [rllib]()
 
 https://arxiv.org/pdf/1712.09381.pdf

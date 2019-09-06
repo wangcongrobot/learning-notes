@@ -149,7 +149,7 @@ https://zhuanlan.zhihu.com/p/31620093
 EPFL
 Editor for TRO
 
-- [Sylvain Calinon]()
+- [Sylvain Calinon](https://calinon.ch/index.htm)
 
 Idiap Research Institute
 Editor for TRO

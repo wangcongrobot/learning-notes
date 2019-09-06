@@ -11,3 +11,7 @@ https://github.com/eleramp/robot-agents
 
 
 
+https://github.com/VincentYu68/SymmetryCurriculumLocomotion/tree/master/baselines/baselines/ppo1
+
+https://github.com/VincentYu68/SymmetryCurriculumLocomotion/blob/master/baselines/baselines/ppo1/run_walker3d_staged_learning.py
+
