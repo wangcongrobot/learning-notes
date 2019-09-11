@@ -497,6 +497,10 @@ as_urrobotiq is inteded to be setup as a general purpose robot platform for auto
 
 It use the UR5 arm, Robotiq 3 finger gripper, kinect, Xtion, FT300 sensor, Tensorflow.
 
+- [gym-ignition](https://github.com/robotology/gym-ignition)
+
+Experimental OpenAI Gym environments implemented with Ignition Robotics
+
 - [as_DeepClaw](https://github.com/ancorasir/as_DeepClaw)
 
 It's the same project with [as_urrobotiq](https://github.com/ancorasir/as_urobotiq).
