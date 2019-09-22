@@ -451,6 +451,47 @@ def step(self, a):
     return ob, reward, done, dict(reward_dist=reward_dist, reward_ctrl=reward_ctrl)
 ```
 
+DoorGym
+```python
+    def step(self, a):
+        if not self.unity and self.no_viewer:
+            print("made mujoco viewer")
+            self.viewer = self._get_viewer('human')
+            self.viewer_setup()
+            self.no_viewer = False
+
+        reward_dist = -np.linalg.norm(self.get_dist_vec())
+        reward_log_dist = -np.log(np.square(np.linalg.norm(reward_dist))+5e-3) - 5.0 
+        reward_ori = - np.linalg.norm(self.get_ori_diff_no_xaxis())
+        reward_door = abs(self.sim.data.get_joint_qpos("hinge0")) * 30
+
+        if self.xml_path.find("gripper")>-1:
+            reward_ctrl = - np.mean(np.square(a[:-2]))
+        else:
+            reward_ctrl = - np.mean(np.square(a))
+
+        if self.xml_path.find("lever")>-1 or self.xml_path.find("round")>-1:
+            reward_doorknob = abs(self.sim.data.get_joint_qpos("hinge1")) * 50
+            reward = reward_door + reward_doorknob + reward_ctrl + reward_ori + reward_dist + reward_log_dist
+        else:
+            reward = reward_door + reward_ctrl + reward_ori + reward_dist + reward_log_dist
+
+        if self.init_done and self.xml_path.find("gripper")>-1:
+            self.gripper_action = np.array([a[-1],-a[-1],a[-1],-a[-1]])
+            a = np.concatenate((a,self.gripper_action))
+
+        self.do_simulation(a, self.frame_skip)
+        ob = self._get_obs()
+        done = False
+
+        if self.init_done and self.unity:
+            self.remote.setqpos(self.sim.data.qpos)
+
+        self.tt += 1
+        return ob, reward, done, dict(reward_dist=reward_dist, reward_ctrl=reward_ctrl)
+```
+
+
 ## Surreal
 
 **Nut-and-peg Assembly:** Two colored pegs are mounted to the tabletop. The Sawyer robot needs to declutter the nuts lying on top of each other and assemble them onto their corresponding pegs. Each episode lasts for 2000 timesteps. Each step receives reward at most 4 (at most 8000 for an entire episode). The initial positions and orientations of the nuts are randomized. Object features contain the position and orientation of the gripper, positions and orientaions of the nuts and their positions and orientaions with respect to the gripper. Reward 1 is given to every object successfully placed into the bin. An additional reward max(r1, r2, r3, r4) is given to 1)$r_1\leq0.1$: placing the gripper near an unplaced nut, 2)$r_2\leq0.35$: touching an unplacecd nut, 3)$r_3\leq0.5$: lifting an unplaced nut or 4)$r_4\leq0.7$: hovering an unplaced nut over the desired hole.
