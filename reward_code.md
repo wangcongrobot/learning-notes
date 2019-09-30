@@ -452,6 +452,12 @@ def step(self, a):
 ```
 
 DoorGym
+
+shaped reward function:
+$$ r_t=-a_0d_t-a_1log(d_t+\alpha)-a_2o_t-a_3\sqrt{u^2_t}+a_4\phi_t+a_5\psi_t $$
+
+where $d_t$ is the distance between the fingertip of the end-effector and the center coordinate of the doorknob, second logarithm distance term has beed added to give a precision when the agent get close to a target, $\alpha$ are set to 0.005, $o_t$ is the difference between the current fingertip orientation of the robot and the ideal orientation to hook/grip the doorknob, $u_t$ is the control input to the system, $\phi_t$ is the angle of the door, and $\psi_t$ is the angle of the door knob. The $t$ subscript indicates the value at time $t$. Weights are set to $a_0=1.0$, $a_1=1.0$, $a_2=1.0$, $a_3=1.0$, $a_4=30.0$, $a_5=50.0$. When using the pull knob, door knob angle $\psi$ is ignored.
+
 ```python
     def step(self, a):
         if not self.unity and self.no_viewer:

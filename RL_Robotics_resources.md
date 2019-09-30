@@ -845,5 +845,6 @@ The goal of meta-learning is to enable agents to learn how to learn. This is, we
 Implementation of Model-Agnostic Meta-Learning (MAML) applied on Reinforcement Learning problems in Pytorch. This repository includes environments introduced in (Duan et al., 2016, Finn et al., 2017): multi-armed bandits, tabular MDPs, continuous control with MuJoCo, and 2D navigation task.
 
 
-
+https://arxiv.org/abs/1909.12271
+RLBench: The Robot Learning Benchmark & Learning Environment
 
