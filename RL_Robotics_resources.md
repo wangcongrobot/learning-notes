@@ -580,6 +580,9 @@ Algorithms: A2C, DDPG, PPO, SAC, ICM, MERLIN
 
 mobile robot rl demo
 
+- [RLBench](https://github.com/stepjam/RLBench)
+
+RLBench is an ambitious large-scale benchmark and learning environment featuring 100 unique, hand-design tasks, tailored to facilitate research in a number of vision-guided manipulation research areas, including: reinforcement learning, imitation learning, multi-task learning, geometric computer vision, and in particular, few-shot learning.RLBench: The Robot Learning Benchmark & Learning Environment
 
 # Reinforcement Learning Algorithms
 
