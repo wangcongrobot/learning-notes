@@ -156,7 +156,7 @@ rllab is a framework for developing and evaluating reinforcement learning algori
 
 - [Horizon](https://github.com/facebookresearch/Horizon)
 
-A platform for Applied Reinforcement Learning (Applied RL), developed by Facebook. https://horizonrl.com
+A platform for Applied Reinforcement Learning (Applied RL), leveloped by Facebook. https://horizonrl.com
 
 
 
