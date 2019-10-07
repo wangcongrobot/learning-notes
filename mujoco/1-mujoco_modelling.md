@@ -2,6 +2,8 @@
 
 For the robotics community, ROS is almost the standard for robotics and we can find a robot model of URDF style. So first, we will introduce how to convert a URDF model to a MuJoCo model. It's simple but need some extra works.
 
+https://wiki.aalto.fi/download/attachments/151495783/Final%20Report%20Group%2016%20E8004%202019.pdf?api=v2
+
 ## Convert the URDF to mjcf file
 
 ### Some reference links
@@ -12,6 +14,8 @@ http://mujoco.org/book/modeling.html
 http://www.mujoco.org/book/modeling.html#CURDF
 
 http://www.mujoco.org/forum/index.php?threads/generation-mobile-robot-from-urdf-to-mjcf.3973/
+
+https://github.com/iandanforth/mjcf
 
 ### convert a urdf file to mjcf file
 
@@ -27,15 +31,58 @@ The MjModel is a bin file, converted from urdf.
 
 1. convert xacro to urdf
 
+Add mujoco tag to xacro, ensure that it can find the mesh files.
+http://www.mujoco.org/book/XMLreference.html#compiler
+
+For my robot, the **meshdir**, **balanceinertia**, **discardvisual** tags are important. Leave the others default setting.
+
+```xml
+  <mujoco>
+        <compiler 
+        meshdir="../meshes_mujoco/" 
+        fusestatic= "true" 
+        balanceinertia="true" # some geometry link in urdf could cause error, so set it "true"
+        strippath="true" # default is "true", is "false", maybe cannot find the file path
+        discardvisual="false" # this tag default is true, discard the visual geometry, if you want your robot look good, set it "false"
+        />
+  </mujoco>
+```
+
+Error: add balanceinertia tag if you has this error
+```bash
+Error: inertia must satisfy A + B >= C; use 'balanceinertia' to fix
+Object name = inertial_link, id = 3
+```
+
+Copy all the stl file to the meshes file.
+
+Some xacro files use the dae file to display, but mujoco cannot import the dae file. So we must change it to stl file using [MashLab](http://www.meshlab.net/). See [here](http://www.mujoco.org/forum/index.php?threads/unknown-mesh-file-type-dae.3495/).
+
+- [some meshes ignored when converting urdf to mjcf](http://www.mujoco.org/forum/index.php?threads/meshes-ignored-when-converting-urdf-to-mjcf.3433/)
+
+Darwin has collision meshes, which is why they are showing. *Sawyer only has visual meshes, which are discarded automatically when discardvisual="true", which is the default when parsing URDFs. So you need to set **discardvisual="false"** in \<compiler> tag*. Also, you have a box with size="0 0 0" which is an error. Geom sizes must be positive. See attached model.
+
+Note that collision geoms are placed in geom group 0, while visual geoms are placed in geom group 1. You can toggle the rendering of each group **pressing '0' and '1'** respectively (in the GUI, press "0" and "1", you can see the collision rendering(simple geometry) or visual rendering(beautiful)). 
+
+**You should conform that the top xacro/urdf file can find every subfile.**
+http://www.mujoco.org/forum/index.php?threads/multiple-mesh-folders.3720/
+
+```bash
+roslaunch urdf_tutorial display.launch model:=path/to/file/robot.urdf
+```
+
+```bash
 rosrun xacro xacro --inorder model.xacro > model.urdf
 check_urdf model.urdf
-
+```
 2. convert urdf to mjb file
 
 in the path mujoco200/bin
+```bash
 ./compile model.urdf model.mjb
 ./compile model.urdf model.xml
 ./compile model.urdf model.txt
+```
 
 ```bash
 cong@eclipse:~/.mujoco/mjpro150/bin$ ./compile 
@@ -80,3 +127,10 @@ Scalar coefficient multiplying the position or angle of the specified joint.
 http://www.mujoco.org/forum/index.php?threads/joint-compliance-in-non-thumb-fingers.14/
 
 
+## Dual_UR5_Husky MuJoCo model
+
+
+```bash
+cong@eclipse:~/.mujoco/mujoco200/bin$ ./compile /home/cong/ros_ws/husky_ws/src/husky/husky_description/urdf/dual_arm_husky.urdf /home/cong/ros_ws/husky_ws/src/husky/husky_description/urdf/dual_arm_husky.urdf.xml
+cong@eclipse:~/.mujoco/mujoco200/bin$ ./simulate /home/cong/ros_ws/husky_ws/src/husky/husky_description/urdf/dual_arm_husky.urdf.xml
+```
