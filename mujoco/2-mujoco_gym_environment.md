@@ -11,4 +11,8 @@ Actually, we can just write the gym environment
 We will define a pick-and-place task for reinforcement learning.
 
 
+## mujoco
+ - [mujoco-worldgen-openai](https://github.com/openai/mujoco-worldgen)
+
+Automatic object XML generation for Mujoco
 

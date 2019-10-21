@@ -147,3 +147,17 @@ Deep Reinforcement Learning Nanodegree program https://www.udacity.com/course/de
 
 Generic reinforcement learning codebase in TensorFlow
 
+- [rlswiss](https://github.com/KamyarGh/oorl_rlkit)
+
+https://github.com/KamyarGh/rl_swiss
+
+Reinforcement Learning (RL) and Learning from Demonstrations (LfD) framework for the single task as well as meta-learning settings.
+
+Our goal throughout has been to make it very efficient to implement new ideas quickly and cleanly. The core infrastructure is learning-framework-agnostic (PyTorch, Tf, etc.), however current implementations of specific algorithms are all in PyTorch.
+
+- [extend gym fetch robotics](https://github.com/ozcell/gym_wmgds)
+
+fetch pick multi object, kinova joco kortex
+
+
+

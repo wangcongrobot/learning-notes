@@ -1,5 +1,10 @@
 # How to create a mujoco robot model from urdf file
 
+## Official  MJCF Modeling Document
+http://mujoco.org/book/modeling.html
+
+## URDF
+
 For the robotics community, ROS is almost the standard for robotics and we can find a robot model of URDF style. So first, we will introduce how to convert a URDF model to a MuJoCo model. It's simple but need some extra works.
 
 https://wiki.aalto.fi/download/attachments/151495783/Final%20Report%20Group%2016%20E8004%202019.pdf?api=v2
@@ -57,6 +62,10 @@ Object name = inertial_link, id = 3
 Copy all the stl file to the meshes file.
 
 Some xacro files use the dae file to display, but mujoco cannot import the dae file. So we must change it to stl file using [MashLab](http://www.meshlab.net/). See [here](http://www.mujoco.org/forum/index.php?threads/unknown-mesh-file-type-dae.3495/).
+
+[python script](https://github.com/shadow-robot/sr_common/blob/kinetic-devel/sr_description/mujoco_models/meshes/arm_and_hand_meshes/conversion.py) to convert the .dae file to .stl file.
+
+This is a [python script](https://github.com/shadow-robot/sr_common/blob/kinetic-devel/sr_description/mujoco_models/meshes/arm_and_hand_meshes/conversion.py), written for blender for batch conversion of dexterous hand collada (.dae) mesh files to .stl format, for use in the Mujoco simulator.
 
 - [some meshes ignored when converting urdf to mjcf](http://www.mujoco.org/forum/index.php?threads/meshes-ignored-when-converting-urdf-to-mjcf.3433/)
 
@@ -134,3 +143,9 @@ http://www.mujoco.org/forum/index.php?threads/joint-compliance-in-non-thumb-fing
 cong@eclipse:~/.mujoco/mujoco200/bin$ ./compile /home/cong/ros_ws/husky_ws/src/husky/husky_description/urdf/dual_arm_husky.urdf /home/cong/ros_ws/husky_ws/src/husky/husky_description/urdf/dual_arm_husky.urdf.xml
 cong@eclipse:~/.mujoco/mujoco200/bin$ ./simulate /home/cong/ros_ws/husky_ws/src/husky/husky_description/urdf/dual_arm_husky.urdf.xml
 ```
+
+## damping
+
+
+C++ tutorial: 
+https://github.com/atabakd/MuJoCo-Tutorials

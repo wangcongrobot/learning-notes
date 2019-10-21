@@ -53,6 +53,10 @@ A paper using Robotiq 3 finger gripper.
 
 ### gym environment
 
+- [gym environments](https://github.com/openai/gym/blob/master/docs/environments.md)
+
+This is a list of Gym environments, including those packaged with Gym, official OpenAI environments, and third party environment.
+
 - [Contimuouscontrol](https://github.com/Jialn/ContinuousControl)
 
 Some continuous control experiemnts based on OpenAI baselines, Gym, and Mujoco. 
