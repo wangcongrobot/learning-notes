@@ -8,3 +8,5 @@ Use V-HACD to deal with complex STL files:
 
 http://www.mujoco.org/forum/index.php?threads/gear-task-stl-files.3983/
 
+http://www.mujoco.org/forum/index.php?threads/joint-compliance-in-non-thumb-fingers.14/#post-44
+

@@ -9,12 +9,27 @@ The ros_control interface for the MuJoCo simulator. The code parses a given mode
 This package is part of project [Affordance Learning for End-to-End Visuomotor Robot Control](https://github.com/gamleksi/affordance_gym). 
 
 
+ROS Kinetic, MoveIt!, Mujoco(2.0), 
 
-
-
-
+mujoco_control.cpp
+void render(mjrRect &viewport) {
+    std::cout << "Render" << std::endl;
+    // update abstract scene
+    mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
+    std::cout << "Render1" << std::endl;
+    // render scene in offscreen buffer
+//    mjr_render(viewport, &scn, &con);
+    std::cout << "Render3" << std::endl;
+}
 
 
 ## [mujoco_ros_pkgs](https://github.com/shadow-robot/mujoco_ros_pkgs)
 
 ROS integration of Mujoco simulator
+
+```bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/cong/.mujoco/mjpro150/bin
+cong@eclipse:~/ros_ws/mujoco_ros_ws$ roslaunch sr_robot_launch srhand_mujoco.launch
+```
+rosdep install --from-paths src --ignore-src -r -y
+

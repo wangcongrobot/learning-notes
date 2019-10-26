@@ -149,3 +149,13 @@ cong@eclipse:~/.mujoco/mujoco200/bin$ ./simulate /home/cong/ros_ws/husky_ws/src/
 
 C++ tutorial: 
 https://github.com/atabakd/MuJoCo-Tutorials
+
+## MuJoCo Robot Model Resource
+
+- [Official resource]()
+
+- [shadow-robot-mujoco-model](https://github.com/shadow-robot/sr_common/tree/kinetic-devel/sr_description/mujoco_models)
+
+This directory contains files necessary for a Mujoco simulation of the dexterous hand (Hand E).
+
+

@@ -10,12 +10,33 @@ pip install your_package
 
 ```
 
-train a agent with rllib:
+## install latest version
 
-rllib train --run PPO --env DualUR5HuskyPickAndPlace-v1 --checkpoint-freq 20 --config '{"num_workers": 20}
+https://ray.readthedocs.io/en/latest/installation.html
+
+0.8.0.dev6
+```bash
+wget https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-0.8.0.dev6-cp37-cp37m-manylinux1_x86_64.whl
+pip install -U [link to wheel]
+pip install tensorflow tensorboard tensorflow-probability requests numpy mujoco-py==2.0.2.2 psutil
+pip gym
+
+```
+
+## train
+
+train a agent with rllib:
+```bash
+rllib train --run PPO --env DualUR5HuskyPickAndPlace-v1 --checkpoint-freq 20 --config '{"num_workers": 20} --restore /path/to/your/model/checkpoint
+```
 
 evaluate your model:
-
+```bash
 rllib rollout /path/to/your/model/checkpoint --run PPO
+```
 
-## install from source
+```bash
+rllib train --run PPO --checkpoint-freq 20 --env DualUR5HuskyPickAndPlace-v1 --config '{"num_workers":25, "lambda":0.99, "kl_coeff":1.0, "clip_param":0.2, "observation_filter":"MeanStdFilter", "batch_mode":"complete_episodes", "lr": 0.0005}'
+```
+
+
