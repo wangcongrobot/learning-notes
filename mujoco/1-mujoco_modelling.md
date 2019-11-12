@@ -67,6 +67,8 @@ Some xacro files use the dae file to display, but mujoco cannot import the dae f
 
 This is a [python script](https://github.com/shadow-robot/sr_common/blob/kinetic-devel/sr_description/mujoco_models/meshes/arm_and_hand_meshes/conversion.py), written for blender for batch conversion of dexterous hand collada (.dae) mesh files to .stl format, for use in the Mujoco simulator.
 
+https://github.com/bulletphysics/bullet3/issues/1507
+
 - [some meshes ignored when converting urdf to mjcf](http://www.mujoco.org/forum/index.php?threads/meshes-ignored-when-converting-urdf-to-mjcf.3433/)
 
 Darwin has collision meshes, which is why they are showing. *Sawyer only has visual meshes, which are discarded automatically when discardvisual="true", which is the default when parsing URDFs. So you need to set **discardvisual="false"** in \<compiler> tag*. Also, you have a box with size="0 0 0" which is an error. Geom sizes must be positive. See attached model.

@@ -13,6 +13,7 @@ This blog summarizes some reinforcement learning in robotic manipulation tasks.
       - [Task Analysis](#task-analysis)
       - [Reward Analysis](#reward-analysis)
     - [Pin in hole](#pin-in-hole)
+    - [rearrangement task](#rearrangement-task)
 
 
 ## RL Manipulation Benchmark
@@ -48,3 +49,8 @@ https://arxiv.org/abs/1909.12271 RLBench: The Robot Learning Benchmark & Learnin
 
 ### Pin in hole
 
+### rearrangement task
+
+- [rearrangement](https://github.com/huiwenzhang/gym-rearrangement)
+
+rearrangement task based on gym fetch push task.

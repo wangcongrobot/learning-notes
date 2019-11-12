@@ -28,8 +28,64 @@ void render(mjrRect &viewport) {
 ROS integration of Mujoco simulator
 
 ```bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/cong/.mujoco/mjpro150/bin
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/cong/.mujoco/mjpro150/bin
 cong@eclipse:~/ros_ws/mujoco_ros_ws$ roslaunch sr_robot_launch srhand_mujoco.launch
 ```
 rosdep install --from-paths src --ignore-src -r -y
 
+
+## [gym-sawyer](https://github.com/rlworkgroup/gym-sawyer/blob/master/sawyer/ros/envs/sawyer/README.md)
+
+- catkin_make error:
+```bash
+$ ImportError: "from catkin_pkg.package import parse_package" failed: No module named 'catkin_pkg'
+$ Make sure that you have installed "catkin_pkg", it is up to date and on the PYTHONPATH.
+```
+
+[solution](https://stackoverflow.com/questions/43024337/why-this-error-when-i-try-to-create-workspaces-in-ros):
+
+```bash
+$ locate catkin_pkg
+$ /usr/lib/python2.7/dist-packages/catkin_pkg
+$ echo $PYTHONPATH
+$ /opt/ros/kinetic/lib/python2.7/dist-packages
+$ export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages
+$ echo $PYTHONPATH
+$ /opt/ros/kinetic/lib/python2.7/dist-packages:/usr/lib/python2.7/dist-packages/
+```
+
+- error: install mujoco that changed LD_LIBARY_PATH
+https://answers.ros.org/question/205962/cant-find-libroscppso-fedora-21/
+
+https://answers.ros.org/question/220546/catkin_make-failure-due-to-python-anaconda/
+
+Delete your build folder after turning off anaconda. CMake will cache the Python executable it finds. 
+
+- error: ModuleNotFoundError: No module named 'em'
+
+sollution: 
+```bash
+pip uninstall em
+pip install empy
+```
+
+
+## github
+
+-[sawyer-control](https://github.com/mdalal2020/sawyer_control)
+
+Python3 ROS Interface to Rethink Sawyer Robots with OpenAI Gym Compatibility
+
+- [foresight_rospkg](https://github.com/SudeepDasari/visual_foresight/tree/master/visual_mpc/foresight_rospkg)
+
+- [SawyerImitation](https://github.com/SudeepDasari/SawyerImitation)
+
+imitation_rospkg
+
+- [Working with real robots: baxter, robobo and omnirobot](https://s-rl-toolbox.readthedocs.io/en/latest/guide/real_robots.html)
+
+- [Reinforcement Learning with ROS and Gazebo](https://github.com/vmayoral/basic_reinforcement_learning/blob/master/tutorial7/README.md)
+
+Using [Gazebo-Gym](http://erlerobotics.com/whitepaper/robot_gym.pdf).
+
+- [rl-gazebo-ur5](https://github.com/hjalte33/rl_unscrew)
