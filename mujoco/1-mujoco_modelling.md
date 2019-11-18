@@ -161,3 +161,7 @@ https://github.com/atabakd/MuJoCo-Tutorials
 This directory contains files necessary for a Mujoco simulation of the dexterous hand (Hand E).
 
 
+## mujoco document
+
+There are some context about mujoco tendon tags and how to model:
+https://lib.ugent.be/fulltxt/RUG01/002/366/963/RUG01-002366963_2017_0001_AC.pdf

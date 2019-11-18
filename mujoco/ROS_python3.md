@@ -49,3 +49,51 @@ https://stackoverflow.com/questions/16981921/relative-imports-in-python-3
 
 https://answers.ros.org/question/245967/importerror-no-module-named-rospkg-python3-solved/
 
+## rllib and ros
+
+```bash
+virtualenv py3 --python=python3.7
+source py3/bin/actiavte
+pip install catkin_pkg rospkg empy 
+pip install ray[rllib] requests psutil tensorflow==1.14.0 
+
+
+catkin_make
+
+rllib train --help
+    import cv2
+ImportError: /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so: undefined symbol: PyCObject_Type
+(py3) cong@eclipse:~/ros_ws/openai_ros_ws$ echo $PYTHONPATH
+/home/cong/ros_ws/openai_ros_ws/devel/lib/python3/dist-packages:/home/cong/ros_ws/dual_ws/devel/lib/python2.7/dist-packages:/opt/ros/kinetic/lib/python2.7/dist-packages
+
+export PYTHONPATH=/home/cong/ros_ws/openai_ros_ws/devel/lib/python3/dist-packages:/home/cong/ros_ws/dual_ws/devel/lib/python2.7/dist-packages
+```
+
+(py3) cong@eclipse:~/ros_ws/openai_ros_ws/src$ catkin_init_workspace 
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/bin/catkin_init_workspace", line 11, in <module>
+    from catkin.init_workspace import init_workspace
+ImportError: No module named catkin.init_workspace
+
+or 
+
+cannot import rospy
+
+source /opt/ros/kinetic/setup.bash
+
+then you can find the rospy
+
+<module 'rospy' from '/opt/ros/kinetic/lib/python2.7/dist-packages/rospy/__init__.py'>
+
+```python
+import sys
+sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages') # in order to import cv2 under python3
+import cv2
+sys.path.append('/opt/ros/kinetic/lib/python2.7/dist-packages') # append back in order to import rospy
+```
+
+>>> import moveit_commander
+Failed to import pyassimp, see https://github.com/ros-planning/moveit/issues/86 for more info
+
+pip install pyassimp
+

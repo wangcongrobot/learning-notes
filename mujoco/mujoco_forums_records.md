@@ -13,3 +13,6 @@ http://www.mujoco.org/forum/index.php?threads/joint-compliance-in-non-thumb-fing
 
 - equality/connect
 http://www.mujoco.org/forum/index.php?threads/assign-point-in-2-mesh-and-connect-them.3473/
+
+- grasping
+http://www.mujoco.org/forum/index.php?threads/joint-compliance-in-non-thumb-fingers.14/#post-58

@@ -89,3 +89,14 @@ imitation_rospkg
 Using [Gazebo-Gym](http://erlerobotics.com/whitepaper/robot_gym.pdf).
 
 - [rl-gazebo-ur5](https://github.com/hjalte33/rl_unscrew)
+
+
+## mujoco ros related package
+
+- [mujoco_ros_test](https://github.com/savik28/mujoco_test)
+
+ROS - Mujoco bridging and visualisation of simulation inrviz and usage of kdl to compute gravitational force
+
+- [Manipulating Object Collections Using Grounded State Representations](https://github.com/matwilso/object_collections)
+
+It relates the mujoco and ros. In the scripts/ folder: Misc scripts for doing some things, including real world evaluations. Require **ROS/Baxter/MoveIt** knowledge, not likely very useful.

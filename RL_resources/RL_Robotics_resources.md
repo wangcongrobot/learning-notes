@@ -66,6 +66,27 @@ Including:
 Ping-pong Game in mujoco; 
 Spider/Humanoid robot walking. 
 
+- [RoboSimLib](https://github.com/hejia-zhang/robosimlib)
+
+mujoco and gazebo model:
+
+sawyer, reacher, bins
+
+- [a3c-mujoco](https://github.com/Feryal/a3c-mujoco)
+
+Simulated target reaching tasks using the MuJoCo physics engine. The setup is adapted from [1] end-to-end learning setup for solving pixel-driven control of Jaco arm where learning is accomplished using Asynchronous Advantage Actor-Critic (A3C)[2] method with sparse rewards.
+
+- [reinmav-gym](https://github.com/ethz-asl/reinmav-gym)
+
+reinmav-gym is a gym environment for developing mav controllers using the openai gym framework. The environment composes of two environments: native which has a built in simulator and mujoco which uses the mujoco simulator.
+
+native environment has a built in dynamics 2D / 3D model that does not require any additional physics engine.
+mujoco environment has a quadrotor model in the mujoco simulator for more complex environments
+
+![gym](https://github.com/ethz-asl/reinmav-gym/blob/master/gym_reinmav/resources/reinmav-gym-mujoco.gif)
+
+![reinmav-gym-mujoco](#../images/reinmav-gym-mujoco.gif)
+
 - [cassie-mujoco-sim](https://github.com/osudrl/cassie-mujoco-sim)
 
 A simulation library for Agility Robotics' Cassie robot using MuJoCo
