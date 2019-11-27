@@ -73,17 +73,4 @@ Traceback (most recent call last):
 RuntimeError: Unable to connect to move_group action server 'move_group' within allotted time (5s)
 ```
 
-
-https://github.com/marcoesposito1988/easy_handeye_demo
-
-https://github.com/IFL-CAMP/easy_handeye
-
-need to change:
-
-    <!-- The input reference frames -->
-    <arg name="robot_base_frame" default="l_ur5_arm_base_link" />
-    <arg name="robot_effector_frame" default="l_ur5_arm_ee_link" />
-    <arg name="tracking_base_frame" default="tracking_origin" />
-    <arg name="tracking_marker_frame" default="tracking_marker" />
-
-change ur5_kinect_calibration.launch
+For husky dual ur5 usage, see [link]().

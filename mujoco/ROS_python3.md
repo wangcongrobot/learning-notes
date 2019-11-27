@@ -41,6 +41,12 @@ import cv2
 sys.path.append('/opt/ros/kinetic/lib/python2.7/dist-packages')
 ```
 
+OR I try to remove /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so
+```
+sudo cp /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so.backup
+sudo rm -rf /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so
+```
+
 - python import error
 
 https://stackoverflow.com/questions/16981921/relative-imports-in-python-3

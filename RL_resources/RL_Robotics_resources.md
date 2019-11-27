@@ -202,6 +202,12 @@ Curriculum learning
 
 Open source domain randomized door opening training environment.
 
+We are announcing the launch of the IKEA Furniture Assembly environment as a first-of-its-kind benchmark for testing and accelerating the automation of physical assembly processes. An agent (Sawyer, Baxter, Cursor) is required to move, align, and connect furniture parts sequentially. The task is completed when all parts are connected.
+
+Our Mujoco environment is developed based on Robosuite and Unity implementation from DoorGym-Unity is used.
+
+- [IKEA Furniture Assembly Environment for Long-Horizon Complex Manipulation Tasks](https://github.com/clvrai/furniture)
+
 - [raisimGym](https://github.com/leggedrobotics/raisimGym)
 
 raisimGym is an example of a gym environment using raisim, from ETH. It uses stable-baselines (https://github.com/hill-a/stable-baselines) for training and pybind11 (https://github.com/pybind/pybind11) for wrapping raisim in python.
@@ -297,6 +303,11 @@ Implementation of various algorithms on domestic robot using ROS. Mobile manipul
 - [tiago-gym-gazebo](https://github.com/huiwenzhang/tiago-gym-gazebo)
 
 A TIAGo environment used for manipulation tasks learning based on ros and openai gym
+
+- [Gym-Ignition](https://github.com/robotology/gym-ignition)
+
+Gym-Ignition provides the capability of creating reproducible robotics environments for reinforcement learning research.
+
 
 - [ur5 rl](https://github.com/hjalte33/rl_unscrew)
 

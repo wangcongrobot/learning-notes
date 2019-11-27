@@ -25,3 +25,10 @@ It uses a bexter robot with moveit and mujoco model.
 
 https://github.com/matwilso/domrand
 
+## Gym-Gazebo
+
+gym-gazebo and gym-gazebo2 is a good code example to learn how to use gym and ros.
+
+## openai_ros
+
+openai_ros is based on gym-gazebo and gym, is a good package to use gym and ros.
