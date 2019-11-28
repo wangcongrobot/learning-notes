@@ -18,8 +18,25 @@ __*Talk is cheap. Show me the code. --- Linus Torvalds*__
 - []()
 - []()
 
+## Sumary
+
+Comparisons with other Frameworks
+Frameworks can mostly be divided into 2 groups:
+
+the ones that focus on providing environments
+the ones that focus on providing learning models and algorithms
+In this document, I will review and compare the various frameworks.
+
+https://github.com/robotlearn/pyrobolearn/blob/master/docs/source/frameworks.rst
+
+- [google-robotics](https://docs.google.com/presentation/d/e/2PACX-1vTZD619SHMJ6yWjo-sO4eJNhWs4HiGDskqwKutim8oqYue5Zfxv-B6MrwGg5Q32eDhRPlfKA77QwBYx/pub?start=false&loop=false&delayms=60000&slide=id.g73ffa425ff_0_379)
+
+## Conference and Workshop
+
+- [IROS2019-Open-Ended Learning for Object Perception and Grasping: Current Successes and Future Challenges](https://www.ai.rug.nl/oel/)
 
 
+In this workshop, we would like to discuss the critical role of open-ended learning in object perception and grasp affordance. We invite a number of renowned experts in the field who will highlight the current successes and future challenges these robots face. In particular, we will discuss the current and future challenges and opportunities for open-ended approaches in this workshop by considering the following questions:
 
 ## Code
 
@@ -71,6 +88,10 @@ Spider/Humanoid robot walking.
 mujoco and gazebo model:
 
 sawyer, reacher, bins
+
+ - [robel-manipulator-google](https://github.com/google-research/robel)
+
+ROBEL is an open-source platform of cost-effective robots and associated reinforcement learning environments for benchmarking reinforcement learning in the real world. It provides Gym-compliant environments that easily run in both simulation (for rapid prototyping) and on real hardware. ROBEL robots are robust and scalable - they have facilitated over 14000 hours (as of Aug'19) of real-world training with various learning-based methods. Benchmarks using several learning-based methods are provided for ease of comparison and extensibility. Refer to ROBEL's webpage for full details.
 
 - [a3c-mujoco](https://github.com/Feryal/a3c-mujoco)
 

@@ -34,6 +34,20 @@ S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL
 
 https://s-rl-toolbox.readthedocs.io/en/latest/guide/real_robots.html
 
+- [RoboNet](https://github.com/SudeepDasari/RoboNet)
+
+https://github.com/SudeepDasari/RoboNet/wiki/Experiment-Replication
+
+- [visual_foresight](https://github.com/SudeepDasari/visual_foresight)
+
+Code for reproducing experiments in Visual Foresight: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control
+
+On a high level, Visual Model Predictive Control (visual-MPC) leverages an action-conditioned video prediction model (trained from unsupervised interaction) to enable robots to perform various tasks with only raw-pixel input. This codebase provides an implmentation of: unsupervised data collection, our benchmarking framework, the various planning costs, and - of course - the visual-MPC controller! Additionally, we provide: instructions to reproduce our experiments, Dockerfiles for our simulator environments, and documentation on our Sawyer robot setup.
+
+- [visual_mpc](https://github.com/febert/visual_mpc)
+
+Visual MPC implementation running on Rethink Sawyer Robot
+
 - [vices](https://github.com/StanfordVL/robosuite/tree/vices_iros19)
 
 Surreal Robotics Suite with VICES IROS19 code: standardized and accessible robot manipulation benchmark with physics simulation and integrated analytical controllers https://stanfordvl.github.io/vices/

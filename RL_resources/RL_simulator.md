@@ -65,6 +65,12 @@ gripper grasp
 
 Converting OnShape assembly to robot definition (SDF or URDF) through OnShape API, to pybullet simulator
 
+- [pyrobolearn](https://github.com/robotlearn/pyrobolearn)
+
+This repository contains the code for the PyRoboLearn (PRL) framework: a Python framework for Robot Learning. This framework revolves mainly around 7 axes: simulators, worlds, robots, interfaces, learning tasks (= environment and policy), learning models, and learning algorithms.
+
+Currently, we mainly use the PyBullet simulator.
+
 ### Gazebo
 
 Using Gazebo to train the RL agent.
