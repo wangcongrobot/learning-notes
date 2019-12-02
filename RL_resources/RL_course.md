@@ -52,3 +52,8 @@ https://datawhalechina.github.io/pumpkin-book
 - [RL-noise](https://zhuanlan.zhihu.com/p/78601257)
 
 - [RL-interview](https://zhuanlan.zhihu.com/p/33133828)
+
+- [Deep RL and Control](https://katefvision.github.io/)
+
+CMU 2017 class
+

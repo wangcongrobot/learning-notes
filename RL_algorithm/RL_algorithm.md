@@ -160,4 +160,6 @@ Our goal throughout has been to make it very efficient to implement new ideas qu
 fetch pick multi object, kinova joco kortex
 
 
+- [SOTA-RL-Algorithms](https://github.com/quantumiracle/SOTA-RL-Algorithms)
 
+PyTorch implementation of Soft Actor-Critic (SAC), Twin Delayed DDPG (TD3), Actor-Critic (AC/A2C), Proximal Policy Optimization (PPO), QT-Opt, PointNet..

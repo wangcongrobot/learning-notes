@@ -227,7 +227,17 @@ We are announcing the launch of the IKEA Furniture Assembly environment as a fir
 
 Our Mujoco environment is developed based on Robosuite and Unity implementation from DoorGym-Unity is used.
 
+- [assistive-gym](https://github.com/Healthcare-Robotics/assistive-gym)
+
+Assistive Gym, a physics-based simulation framework for physical human-robot interaction and robotic assistance.
+
+![picture](https://github.com/Healthcare-Robotics/assistive-gym/raw/master/images/robot_base_pose_optimization.gif)
+
 - [IKEA Furniture Assembly Environment for Long-Horizon Complex Manipulation Tasks](https://github.com/clvrai/furniture)
+
+We are announcing the launch of the IKEA Furniture Assembly environment as a first-of-its-kind benchmark for testing and accelerating the automation of physical assembly processes. An agent (Sawyer, Baxter, Cursor) is required to move, align, and connect furniture parts sequentially. The task is completed when all parts are connected.
+
+![picture](https://github.com/clvrai/furniture/raw/master/docs/img/agents/video_sawyer_swivel_chair.gif)
 
 - [raisimGym](https://github.com/leggedrobotics/raisimGym)
 
@@ -485,4 +495,12 @@ Implementation of Model-Agnostic Meta-Learning (MAML) applied on Reinforcement L
 
 https://arxiv.org/abs/1909.12271
 RLBench: The Robot Learning Benchmark & Learning Environment
+
+## library
+
+- [google-tensor2robot](https://github.com/google-research/tensor2robot)
+
+This repository contains distributed machine learning and reinforcement learning infrastructure. https://ai.google/research/teams/brain/robotics/
+
+It is used internally at Alphabet, and open-sourced with the intention of making research at Robotics @ Google more reproducible for the broader robotics and computer vision communities.
 

@@ -1,20 +1,6 @@
 # Sim-to-Real
 
 
-## blogs
-
-https://twitter.com/sim2realaiorg?lang=en
-
-https://www.lyrn.ai/2018/12/30/sim2real-using-simulation-to-train-real-life-grasping-robots/
-
-http://josh-tobin.com/assets/pdf/randomization_and_the_reality_gap.pdf
-
-https://sim2realai.github.io/
-
-https://lilianweng.github.io/lil-log/2019/05/05/domain-randomization.html
-
-https://sim2real.github.io/
-
 
 
 
@@ -28,11 +14,21 @@ https://sim2real.github.io/
 
 Code for CoRL 2019 paper "TuneNet: One-Shot Residual Tuning for System Identification and Sim-to-Real Robot Task Transfer"
 
-- [robotics-rl-srl](https://github.com/araffin/robotics-rl-srl)
+### [robotics-rl-srl](https://github.com/araffin/robotics-rl-srl)
 
 S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) for Robotics https://s-rl-toolbox.readthedocs.io
 
 https://s-rl-toolbox.readthedocs.io/en/latest/guide/real_robots.html
+
+**For real robot, using zmq to communicate with ROS.**
+https://github.com/araffin/robotics-rl-srl/tree/master/real_robots
+
+https://github.com/NataliaDiaz/arm_scenario_experiments/tree/rl
+
+
+- [learning-to-manipulate](https://github.com/rstrudel/rlbc)
+
+in real robot
 
 - [RoboNet](https://github.com/SudeepDasari/RoboNet)
 
@@ -68,10 +64,11 @@ This repository contains my implementation of domain randomization setup for tra
 
 use the KUKA LBR4 arm 
 
-## slide
+- [Deep-RL-Sim2Real](https://github.com/harry-uglow/Deep-RL-Sim2Real/tree/master/reality)
 
-https://www.andrew.cmu.edu/course/10-403/slides/S19sim2real.pdf
-https://www.andrew.cmu.edu/course/10-703/slides/Lecture_sim2realmaxentRL.pdf
+Vrep Sawyer sim2real ROS
+
+
 
 ## PyRobot
 
