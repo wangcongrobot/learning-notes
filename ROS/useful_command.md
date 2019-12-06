@@ -18,3 +18,8 @@ sudo ln -s /opt/ros/kinetic/lib/liborocos-kdl.so.1.3 /opt/ros/kinetic/lib/liboro
 
 
 https://answers.ros.org/question/313629/attempt-to-spin-a-callback-queue-from-two-spinners-one-of-them-being-single-threaded/
+
+find . -iname "*.xacro" | xargs sed -i 's#<\([/]\?\)\(if\|unless\|include\|arg\|property\|macro\|insert_block\)#<\1xacro:\2#g'
+
+catkin_make --pkg <my_package_name>
+

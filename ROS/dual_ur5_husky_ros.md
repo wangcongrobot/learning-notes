@@ -2,7 +2,67 @@
 
 https://www.clearpathrobotics.com/assets/guides/husky/index.html
 
-## 
+## Coordination
+
+[REP 103, Standard Units of Measure and Coordinate Conventions in ROS](https://www.ros.org/reps/rep-0103.html#id19)
+
+[REP 105, Coordinate Frames for Mobile Platforms](http://www.ros.org/reps/rep-0105.html)
+
+
+[REP 120, Coordinate Frames for Humanoids Robots](http://www.ros.org/reps/rep-0120.html)
+
+[]()
+
+
+
+In ROS Frame:
+
+- base_link: 
+  - Position: (0,0,0)
+  - Orientation: (0,0,0,1)
+  - Parent: odom
+- base_footprint: 
+  - Position: (0,0,-0.14493)
+  - Orientation: (0,0,0,1)
+  - Parent: base_link
+- bumblebee2_optical(bumblebee2): 
+  - Position: (0.36499,-0.011,0.55212)
+  - Orientation: (0.5,-0.5,0.5,-0.5)
+  - Parent: bumblebee2
+  
+- l_ur5_base_link: 
+  - Position: (0.125,0.15,0.36)
+  - Orientation: (-0.27058,-0.27036,-0.6536,0.65308)
+  - Parent: dual_arm_bulkhead_link
+- l_ur5_arm_base: 
+  - Position: (0.125,0.15,0.36)
+  - Orientation: (-0.27058,0.27036,0.6536,0.65308)
+  - Parent: l_ur5_base_link
+
+- l_ur5_arm_ee_link: 
+  - Position: (0.58622,0.34263,0.80662)
+  - Orientation: (0.66986,0.010241,0.0088766,0.74237)
+  - Parent: l_ur5_arm_wrist_link
+- base_footprint: 
+  - Position: (0,0,-0.14493)
+  - Orientation: (0,0,0,1)
+  - Parent: base_link
+- base_footprint: 
+  - Position: (0,0,-0.14493)
+  - Orientation: (0,0,0,1)
+  - Parent: base_link
+- base_footprint: 
+  - Position: (0,0,-0.14493)
+  - Orientation: (0,0,0,1)
+  - Parent: base_link
+- base_footprint: 
+  - Position: (0,0,-0.14493)
+  - Orientation: (0,0,0,1)
+  - Parent: base_link
+- base_footprint: 
+  - Position: (0,0,-0.14493)
+  - Orientation: (0,0,0,1)
+  - Parent: base_link
 
 [Husky A200 UGV Robot Setup & Configuration](https://youtu.be/wA8UTF0mKBY?list=UUNPP3C-ZK3mwpG2x89VE-2Q)
 
@@ -383,15 +443,22 @@ For more details on this process, please see the ROS wiki page about upstart, lo
 
 Add a new ethernet setting, named `husky`. In button `IPv4 Settings`, `Method` choose **Manual**, Address: 192.168.1.105, Netmask:24, Routes: Use this connection only for resources on its network (not choose).
 
+Create a bash file: `connect-husky_pc.sh`
+```bash
+#!/bin/bash
+ssh administrator@192.168.1.11
+```
+run it then enter `clearpath` to log in.
+
 - connect with Husky via Wifi
 
 choose wifi `HWU09 Husky`, password: clearpath, `IPv4 Settings`:192.168.1.105 & 24, `Routes`: Use this connection only for resources on its network (choose).
 
 - Multi ROS Master
 
-Add `alias` to bashrc in the local PC (not the Husky PC):
+Add `alias` to bashrc in the your local PC (not the Husky PC):
 ```
-alias husky='export ROS_MASTER_URI=http://192.168.1.11:11311; export ROS_IP=192.168.1.105'
+alias husky='export ROS_MASTER_URI=http://192.168.1.11:11311; export ROS_IP=192.168.1.105'; source /opt/ros/kinetic/setup.bash; source /home/wangcong/ros_ws/dual_ws/devel/setup.bash
 ```
 In your computer, open a new terminal (Ctrl+Alt+T), run `husky` and it will connect with husky with a multi ros master mode. Then you can use `rostopic list` to check the running topic.
 
@@ -433,6 +500,47 @@ transformation:
  y:
  z:
 ```
+## Some useful launch file in Husky Robot
+
+```bash
+
+roslaunch husky_dual_ur5_moveit_config_slow start.launch 
+
+roslaunch bumblebee_bringup bringup.launch 
+
+roslaunch husky_navigation_tuned amcl_demo.launch
+
+roslaunch flir_ptu_driver ptu.launch
+
+roslaunch arms.launch
+
+sudo service husky-core stop
+
+sudo service husky-core start
+
+chronyc tracking
+
+roslaunch velodyne_pointcloud VLP16_points.launch
+
+roslaunch fmcw fmcw.launch
+
+rosrun dual_ur5_teleop_general dual_ur5_teleop_general.py
+
+sudo ntpdate 192.168.1.45
+
+roslaunch husky_navigation_tuned gmapping.launch scan_topic:=scan_velodyne
+
+roslaunch hector_mapping mapping_default.launch odom_topic:=odom
+
+rosrun robotiq_s_model_control SModelSimpleController.py _topic:=/l_gripper/SModelRobotOutput
+
+rosrun robotiq_s_model_control SModelSimpleController.py _topic:=/r_gripper/SModelRobotOutput
+
+ 1755  history | grep s_model
+ 1756  history | grep robotiq
+ 1757  history | grep output
+```
+
 
 ## UR5 GUI Interface
 
@@ -449,3 +557,133 @@ two blue light button for power
 cable red e-stop button
 
 ## ros time synchronization
+https://blog.csdn.net/weixin_40830684/article/details/90106066
+
+If you get the error  `no server suitable for synchronization found`, then run 
+
+```bash
+sudo apt-get install ntp
+```
+
+In the husky pc, run this to synchronize the time:
+
+```bash
+sudo ntpdata -u 192.168.1.105(your PC IP)
+```
+
+## Catkin Bugs
+
+- Error
+```bash
+make[2]: *** No rule to make target '/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2', needed by '/home/wangcong/ros_ws/dual_ws/devel/lib/libkinematics_parser.so'.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+```
+
+Solution:
+```bash
+sudo cp /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2  /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+```
+
+- Error:
+```bash
+import cv2
+ImportError: /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so: undefined symbol: PyCObject_Type
+```
+Solution:
+
+remove the link, donot forget to backup it.
+
+## Real Robot Data
+
+```bash
+Prepare Pose:
+left_arm> current 
+joints = [-1.87909251848 -1.03788692156 -1.53594905535 -3.57448703447 -1.69703323046 1.44130086899]
+l_ur5_arm_ee_link pose = [
+header: 
+  seq: 0
+  stamp: 
+    secs: 1575584876
+    nsecs: 217859029
+  frame_id: /base_link
+pose: 
+  position: 
+    x: 0.293392431322
+    y: 0.451117876468
+    z: 0.883873570353
+  orientation: 
+    x: -0.945241006458
+    y: -0.019318881103
+    z: -0.110299601906
+    w: 0.306561932344 ]
+l_ur5_arm_ee_link RPY = [-2.5107967721481677, -0.22224704556891134, -0.03186739072017874]
+
+Prepare Pose:
+right_arm> current 
+joints = [1.93697440624 -1.95270091692 1.76591014862 0.136884212494 1.84678673744 0.0161745846272]
+r_ur5_arm_ee_link pose = [
+header: 
+  seq: 0
+  stamp: 
+    secs: 1575584962
+    nsecs: 574626922
+  frame_id: /base_link
+pose: 
+  position: 
+    x: 0.38433684571
+    y: -0.343016394913
+    z: 0.825388346914
+  orientation: 
+    x: -0.916527433553
+    y: -0.0332474499383
+    z: -0.0386774141674
+    w: 0.396706602226 ]
+r_ur5_arm_ee_link RPY = [-2.32610248957334, -0.09744723399006508, 0.030406448845716468]
+
+
+Home pose:
+right_arm> current 
+joints = [1.56996011734 -2.84751588503 2.79816007614 -1.57001763979 0.524644315243 -3.5587941305e-05]
+r_ur5_arm_ee_link pose = [
+header: 
+  seq: 0
+  stamp: 
+    secs: 1575585274
+    nsecs: 337846994
+  frame_id: /base_link
+pose: 
+  position: 
+    x: 0.202773485126
+    y: -0.218487607837
+    z: 0.683712927176
+  orientation: 
+    x: 0.690639539199
+    y: 0.0785684996314
+    z: 0.711131113242
+    w: 0.105529889317 ]
+r_ur5_arm_ee_link RPY = [1.4404492295404512, -1.3080736803834316, 1.6625945089393188]
+
+Home pose:
+left_arm> current 
+joints = [-1.57001048723 -0.294129673635 -2.79563862482 -1.57005387941 -0.524643723165 2.39684504777e-05]
+l_ur5_arm_ee_link pose = [
+header: 
+  seq: 0
+  stamp: 
+    secs: 1575585305
+    nsecs: 294548988
+  frame_id: /base_link
+pose: 
+  position: 
+    x: 0.202418008477
+    y: 0.219584860188
+    z: 0.684693110025
+  orientation: 
+    x: -0.689768204392
+    y: 0.0768702788729
+    z: -0.711909295684
+    w: 0.107219117488 ]
+l_ur5_arm_ee_link RPY = [-1.429306910700407, -1.3078178427291636, -1.6689384027724665]
+```
+
+
