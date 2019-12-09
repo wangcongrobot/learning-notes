@@ -1,6 +1,8 @@
 # Eye-Hand Calibration
 
 
+https://blog.csdn.net/weixin_40799950/article/details/82594537
+
 
 
 - [handeye_calib_camodocal](https://github.com/jhu-lcsr/handeye_calib_camodocal)
@@ -74,3 +76,19 @@ RuntimeError: Unable to connect to move_group action server 'move_group' within 
 ```
 
 For husky dual ur5 usage, see [link]().
+
+
+## Hand eye calibration and coordination tf
+
+https://blog.csdn.net/weixin_40799950?t=1
+
+### Time Setting
+```bash
+sudo apt-get update
+sudo apt-get install chrony ntpdate
+sudo ntpdate ntp.ubuntu.com
+or
+sudo date -s "16:47 1/23/2017"
+or sudo ntpdate 192.168.1.105(your PC IP)
+```
+
