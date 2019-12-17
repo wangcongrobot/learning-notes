@@ -8,6 +8,10 @@ NVIDIA Deep learning Dataset Synthesizer (NDDS): https://github.com/NVIDIA/Datas
 
 [UE4 + NDDS (NVIDIA Deep learning Dataset Synthesizer ) Install Chinese](https://zhuanlan.zhihu.com/p/94445159)
 
+## run in husky
+
+in path dope_ws/src/dope,
+
 
 ## Install
 
