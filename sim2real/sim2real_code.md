@@ -12,3 +12,7 @@ ROS for **real Sawyer robot**, **[a2c_ppo_acktr](https://github.com/ikostrikov/p
 
 Main development repository for MEng in Computing (Artificial Intelligence) final project titled "Deep Reinforcement Learning in Simulation with Real-world Fine Tuning". Project aims to develop a pipeline for learning robotic control tasks by first training in simulation before transferring to a real robot.
 
+- [visual_mpc](https://github.com/febert/visual_mpc)
+
+Visual MPC implementation running on Rethink Sawyer Robot
+
