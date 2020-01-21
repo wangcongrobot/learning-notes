@@ -47,7 +47,7 @@ where N is the number of joints being controlled
 
 **ros_env**: https://github.com/wangcongrobot/rl-projects/blob/master/actor-critic/ros_env.py
 
-- [sawyer-setup-berkeley](https://docs.google.com/document/d/1JBKPye4ABGBVQqj6RPL5yw3IKBhpO4FJIZoLzzP0d5Q/edit)
+- [sawyer-setup-berkeley-doc](https://docs.google.com/document/d/1JBKPye4ABGBVQqj6RPL5yw3IKBhpO4FJIZoLzzP0d5Q/edit)
 
 - [Sawyer-RealEnv](https://github.com/harry-uglow/Deep-RL-Sim2Real/blob/master/reality/RealEnv.py)
 
