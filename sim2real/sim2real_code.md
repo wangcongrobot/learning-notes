@@ -16,3 +16,5 @@ Main development repository for MEng in Computing (Artificial Intelligence) fina
 
 Visual MPC implementation running on Rethink Sawyer Robot
 
+- [Generalization through Simulation: Integrating Simulated and Real Data into Deep Reinforcement Learning for Vision-Based Autonomous Flight](https://github.com/gkahn13/GtS)
+
