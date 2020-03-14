@@ -56,7 +56,7 @@ void myCallback(const object_recognition_msgs::RecognizedObjectArray objects_msg
 }
  
 void transformPose(const tf::TransformListener& listener){
-  //we'll create a point in the base_laser frame that we'd like to transform to the base_link frame
+  //we'll create a point in the base_laser frame that we'd like to transform to the  frame
   // geometry_msgs::PointStamped laser_point;
   // geometry_msgs::PoseStamped transed_pose;
   // laser_point.header.frame_id = "camera_link";

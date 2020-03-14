@@ -33,3 +33,31 @@ class MPCPolicy:
 
 In this work, we demonstrate that medium-sized neural network models can in fact be combined with model predictive control (MPC) to achieve excellent sample complexity in a model-based reinforcement learning algorithm, producing stable and plausible gaits to accomplish various complex locomotion tasks. We also propose using deep neural network dynamics models to initialize a model-free learner, in order to combine the sample efficiency of model-based approaches with the high task-specific performance of model-free methods.
 
+- [Model Predictive Path Integral Controller (MPPI)](https://github.com/AutoRally/autorally/wiki/Model-Predictive-Path-Integral-Controller-(MPPI))
+
+The model predictive path integral (MPPI) controller is a novel approabh for autonomous vehicle control based on stochastic sampling of trajectories. The method is derivative free, and can handle complex non-linear dynamics and cost functions, which makes it ideal for performing aggressive maneuvers with the AutoRally vehicle.
+
+- [Model Predictive Control and HalfCheetah](https://hollygrimm.com/rl_modelbased)
+
+The dynamics model can be implemented using a Gaussian Process, a Neural Network, or other methods.
+
+One advantage of model-based RL is that they require fewer samples to train compared to model-free. 
+
+**Code:** https://github.com/hollygrimm/cs294-homework/tree/master/hw4
+
+The author implemented the CS294 Homework to understand the interaction between the Neural Network, Model Predictive Control, and data aggregation. The environment was a MuJoCo HalfCheetah simulation in OpenAI Gym.
+
+**Collect Base Data:** The first step is to initialize a dataset of trajectories by running a random policy. Here is a video of the HalfCheetah while the data is being collected.
+
+**Neural Network Dynamics Model:** The paper [1] uses a neural network for the dynamics model with two fully-connected layers of 500 units each and a ReLU activation. When fitting the dynamics model, normalized state and action pairs are input, and the state differences (or deltas) between the input state and next state are output. By predicting a change in state, rather than just the next state, the dynamics model can predict over several timesteps instead of just one timestep.
+
+The mean squared error between the predicted and expected state deltas is minimized during training with the Adam optimizer.
+
+**Reward Function:** The reward function was provided in the homework code, and was a combination of the location of the HalfCheetah's leg, shin, and foot position.
+
+**Model Predictive Controller:** The Model Predictive Controller (MPC) selects an action for a particular state by first generating ten simulated paths each with a horizon of five actions into the future. The next state is predicted using the dynamics model. The candidate paths are evaluated using the reward function and the best performing trajectory is selected. The first action of that trajectory is then performed.
+
+When ten samples are completed with the MPC, the new data is then aggregated into the dataset. This completes the first iteration. For the next iteration, the dynamics model is refitted to the new data, and new samples are again generated using the MPC.
+
+**Homework:** http://rail.eecs.berkeley.edu/deeprlcourse-fa17/f17docs/hw4.pdf
+

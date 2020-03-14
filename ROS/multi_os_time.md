@@ -7,6 +7,11 @@ ERROR: `15 Dec 17:20:29 ntpdate[26610]: no server suitable for synchronization f
 
 ```bash
 sudo apt-get install ntp
+
+sudo ntpdate ntp.ubuntu.com
+[sudo] password for cong: 
+ 1 Mar 22:25:43 ntpdate[2182]: the NTP socket is in use, exiting
+
 ```
 
 网络时间设置

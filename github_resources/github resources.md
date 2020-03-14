@@ -126,7 +126,7 @@ A Gazebo plugin to simulate underwater vehicles and visualize with UWsim.
 This package contains an example of underwater robot using the freefloating_gazebo plugin.
 
 
-
+- [Learning Robust, Real-time, Reactive Robotic Grasping](http://dougsm.com/)
 
 
 

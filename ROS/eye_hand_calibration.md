@@ -93,3 +93,16 @@ sudo date -s "16:47 1/23/2017"
 or sudo ntpdate 192.168.1.105(your PC IP)
 ```
 
+```
+eye_on_hand: true
+robot_effector_frame: r_ur5_arm_ee_link
+tracking_base_frame: camera_link
+transformation:
+  qw: 0.35748973308399334
+  qx: 0.9323567720092666
+  qy: -0.00916393166711523
+  qz: -0.053178593290874265
+  x: 0.04341273041118875
+  y: 0.08906489059602209
+  z: 0.2942827659597837
+```

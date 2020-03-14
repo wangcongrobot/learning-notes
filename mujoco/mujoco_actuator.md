@@ -23,6 +23,9 @@ Joint angles can be defined in degrees in the XML as you have done, but in the c
 
 `The gear ratio is the mapping between joint angles (mjData.qpos) and servo positions (mjData.actuator_length). So if you specify gear=2 in the XML and set ctrl=0.1 at runtime, the joint angle should converge to qpos=0.2.`
  
+
+- [How to control the arms with "joint velocities"?](http://www.mujoco.org/forum/index.php?threads/how-to-control-the-arms-with-joint-velocities.3513/)
+
 When you define an actuator with type `'motor'`, the control signal has the meaning of `torque`. If you want a velocity servo, define an actuator with type 'velocity'. Then the control signal has the meaning of reference velocity. See these sections of the documentation:
 
 http://www.mujoco.org/book/computation.html#geActuation
@@ -36,6 +39,16 @@ Darwin has collision meshes, which is why they are showing. Sawyer only has visu
 Note that collision geoms are placed in geom `group 0`, while visual geoms are placed in geom `group 1`. You can toggle the rendering of each group pressing '0' and '1' respectively.
 
 Save the model as text file, and look at the mjModel field 'nsensordata'. Or you can examine it from your code.
+
+For a motor attached to a slide joint, the meaning of ctrl is force (in Newtons, assuming all the other model parameters you entered are in SI).
+
+If you define a position actuator, then ctrl has the meaning of reference position. If you have an actuator that can generate torque and in addition has a position/velocity servo built into it, you need multiple MuJoCo actuators to model it.
+
+- [Position + velocity actuator](http://www.mujoco.org/forum/index.php?threads/position-velocity-actuator.3749/)
+
+Is it possible to set a desired position and velocity of an actuated joint at the same time? From the MuJoCo documentation I read that you can set the actuator as motor for using torque input, or position for using position inputs. However, I do not get how to use these two features together (if possible). My goal is to move a desired joint following a specific trajectory (position steps) with a defined velocity for each step. Both position and velocity are smooth functions. Thanks for your help in advance.
+
+Each actuator in MuJoCo has a single control input. So you need two actuators attached to the same joint, one for position and one for velocity. Or, if the reference velocity is always zero, you can defined damping in the joint itself instead of attaching a second actuator.
 
 For a motor attached to a slide joint, the meaning of ctrl is force (in Newtons, assuming all the other model parameters you entered are in SI).
 
