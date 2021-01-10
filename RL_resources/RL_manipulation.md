@@ -5,7 +5,7 @@ This blog summarizes some reinforcement learning in robotic manipulation tasks.
 **Contents:**
 - [RL in Robotic Manipulation tasks Resources](#rl-in-robotic-manipulation-tasks-resources)
   - [RL Manipulation Benchmark](#rl-manipulation-benchmark)
-    - [[FetchRobot]()](#fetchrobot)
+    - [FetchRobot](#fetchrobot)
     - [robotsuite](#robotsuite)
     - [RLBench](#rlbench)
   - [Manipulation Tasks](#manipulation-tasks)
@@ -54,3 +54,50 @@ https://arxiv.org/abs/1909.12271 RLBench: The Robot Learning Benchmark & Learnin
 - [rearrangement](https://github.com/huiwenzhang/gym-rearrangement)
 
 rearrangement task based on gym fetch push task.
+
+
+- [Deep Dynamics Models for Learning Dexterous Manipulation](https://github.com/google-research/pddm)
+
+![1](https://github.com/google-research/pddm/blob/master/pddm/gifs/dclaw_gif.gif)
+![2](https://github.com/google-research/pddm/blob/master/pddm/gifs/cube_gif.gif)
+![3](https://github.com/google-research/pddm/blob/master/pddm/gifs/handwriting_gif.gif)
+![4](https://github.com/google-research/pddm/blob/master/pddm/gifs/baoding_gif.gif)
+
+https://sites.google.com/view/pddm/
+
+Using mujoco to simulate learning dexterous manipulation with shadow hand
+
+```
+@INPROCEEDINGS{PDDM, 
+     AUTHOR = {Anusha Nagabandi AND Kurt Konoglie AND Sergey Levine AND Vikash Kumar}, 
+     TITLE = "{Deep Dynamics Models for Learning  Dexterous Manipulation}", 
+     BOOKTITLE = {Conference on Robot Learning (CoRL)}, 
+     YEAR = {2019}, }
+```
+
+- [google-robotics-research](https://github.com/google-research/tensor2robot)
+
+**Tensor2Robot**
+
+This repository contains distributed machine learning and reinforcement learning infrastructure.
+
+It is used internally at Alphabet, and open-sourced with the intention of making research at Robotics @ Google more reproducible for the broader robotics and computer vision communities.
+
+Projects and Publications Using Tensor2Robot
+1. QT-Opt
+2. Grasp2Vec
+3. Watch, Try, Learn
+4. More coming soon.
+
+
+- [google-robel](https://github.com/google-research/robel)
+
+ROBEL: Robotics Benchmarks for Learning with low-cost robots http://roboticsbenchmarks.org
+
+![robel](https://github.com/google-research/robel/blob/master/media/cover.png)
+
+- [Amazon-racer-rl](https://github.com/awslabs/amazon-sagemaker-examples)
+
+
+
+[AWS DeepRacer](https://aws.amazon.com/cn/deepracer/?n=sn&p=sm)

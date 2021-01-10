@@ -22,3 +22,5 @@ https://blog.csdn.net/philthinker/article/details/79778271
 https://github.com/MatthewJA/Inverse-Reinforcement-Learning
 
 http://www.cs.columbia.edu/~bchen/RL_in_Robotics.pdf
+
+- [pybullet-jaco-ddpg](https://github.com/JanMatas/Rainbow_ddpg)

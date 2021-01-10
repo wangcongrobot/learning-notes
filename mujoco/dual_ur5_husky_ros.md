@@ -2,6 +2,8 @@
 
 https://www.clearpathrobotics.com/assets/guides/husky/HuskyDualManip.html
 
+robotiq_fts300: 0.037547
+
 ## install
 
 P.S.: The official ROS package is Indigo, we need to update it to Kinetic version.

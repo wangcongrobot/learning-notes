@@ -43,6 +43,22 @@ In ROS Frame:
   - Position: (0.58622,0.34263,0.80662)
   - Orientation: (0.66986,0.010241,0.0088766,0.74237)
   - Parent: l_ur5_arm_wrist_link
+
+  
+- r_ur5_base_link: 
+  - Position: (0.125,-0.15,0.36)
+  - Orientation: (0.27036,0.27058,-0.65308,0.6536)
+  - Parent: dual_arm_bulkhead_link
+- r_ur5_arm_base: 
+  - Position: (0.125,-0.15,0.36)
+  - Orientation: (0.27058,-0.27036,0.6536,0.65308)
+  - Parent: r_ur5_base_link
+
+- r_ur5_arm_ee_link: 
+  - Position: (0.58622,0.34263,0.80662)
+  - Orientation: (0.66986,0.010241,0.0088766,0.74237)
+  - Parent: r_ur5_arm_wrist_link
+
 - base_footprint: 
   - Position: (0,0,-0.14493)
   - Orientation: (0,0,0,1)
@@ -563,6 +579,7 @@ If you get the error  `no server suitable for synchronization found`, then run
 
 ```bash
 sudo apt-get install ntp
+sudo apt-get install chrony
 ```
 
 In the husky pc, run this to synchronize the time:

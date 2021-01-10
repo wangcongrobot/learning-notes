@@ -1,8 +1,9 @@
 # Eye-Hand Calibration
 
+手眼标定csdn， 坐标转换
 
 https://blog.csdn.net/weixin_40799950/article/details/82594537
-
+https://blog.csdn.net/weixin_40799950/category_7912088.html
 
 
 - [handeye_calib_camodocal](https://github.com/jhu-lcsr/handeye_calib_camodocal)
@@ -92,3 +93,16 @@ sudo date -s "16:47 1/23/2017"
 or sudo ntpdate 192.168.1.105(your PC IP)
 ```
 
+```
+eye_on_hand: true
+robot_effector_frame: r_ur5_arm_ee_link
+tracking_base_frame: camera_link
+transformation:
+  qw: 0.35748973308399334
+  qx: 0.9323567720092666
+  qy: -0.00916393166711523
+  qz: -0.053178593290874265
+  x: 0.04341273041118875
+  y: 0.08906489059602209
+  z: 0.2942827659597837
+```
