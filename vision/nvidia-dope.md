@@ -15,15 +15,7 @@ in path dope_ws/src/dope,
 
 ## Install
 
-### pytorch: 
-
-https://github.com/NVlabs/Deep_Object_Pose/issues/30:
-
-python2.7 -m pip install torch==1.0.0 -f https://download.pytorch.org/whl/cu90/torch-1.0.0-cp27-cp27mu-linux_x86_64.whl
-
-python2.7 -m pip install torch==1.0.0 -f https://download.pytorch.org/whl/cu90/torch-1.0.0-cp27-cp27mu-linux_x86_64.whl
-
-https://download.pytorch.org/whl/cu100/torch_stable.html
+Use conda python2.7 env to install pytorch 1.0.
 
 ### conda2.7
 
@@ -33,11 +25,18 @@ https://www.anaconda.com/distribution/
 - source ~/anaconda2/bin/activate
 - conda create -n py27 python=2.7
 - conda activate py27
-- pip install rospkg catkin_pkg opencv-python opencv-contrib-python pyyaml  enum34
+- pip install rospkg catkin_pkg opencv-python opencv-contrib-python pyyaml  enum34 pyrr scipy
 - conda install pytorch==1.0.0 torchvision==0.2.1 cuda100 -c pytorch (# CUDA 10.0)
+- mkdir -p dope_ws/src
+- git clone https://github.com/NVlabs/Deep_Object_Pose dope
+- download weights
+- rosdep install --from-paths src --ignore-src -r -y
+- catkin_make
 - git clone https://github.com/ros/geometry
 - git clone https://github.com/ros/geometry2
 - catkin_make
+- change topic name: config/config_pose.yaml
+- 
 
 conda remove --name myenv --all
 
