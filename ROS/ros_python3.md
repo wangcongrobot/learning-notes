@@ -34,6 +34,7 @@ pip install catkin_pkg pyyaml empy rospkg numpy
 catkin_make
 source devel/setup.bash
 ```
+
 **ERROR**:
 ```>>> import tf
 Traceback (most recent call last):
@@ -50,13 +51,29 @@ Traceback (most recent call last):
 ImportError: dynamic module does not define module export function (PyInit__tf2)
 ```
 
-**Solution**:
+**Solution1**:
 
 https://github.com/ros/geometry2/issues/259#issuecomment-368537754
 
 and you see it is python2.7 -> you need Python3 header files, so execute this line:
 
 sudo apt-get install python3-dev.
+
+**Solution2**:
+
+If `solution1` still does not work, it maybe the default python3 version is different with your virtual python3. `sudo apt-get install python3-dev` will install python3.6 in the system (Ubuntu 18.04), so you must use `3.6` version to catkin_make your workspace.
+
+The correct python lib link here:
+```bash
+-- ==> add_subdirectory(geometry2/tf2_py)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.6m.so (found suitable version "3.6.9", minimum required is "2") 
+```
+If it cannot find suitable version, a default version (`2.7`) will be used.
+
+```bash
+catkin_make -DPYTHON_EXECUTABLE:FILEPATH=/home/cong/workspace/ros_ws/py3_tf_ws/venv/bin/python
+```
 
 ## MoveIt with python3
 
