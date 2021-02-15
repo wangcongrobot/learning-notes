@@ -105,3 +105,12 @@ $ ll /home/cong/ros_ws/openai_ros_ws/devel/lib/python3/dist-packages/moveit_ros_
 /usr/src/Python-3.7.3/Tools/scripts/2to3 --output-dir moveit3 -W -n moveit/
 
 https://blog.csdn.net/angus_monroe/article/details/78765018
+
+## cv_bridge
+
+https://blog.csdn.net/Boys_Wu/article/details/107068536
+
+https://blog.csdn.net/weixin_42675603/article/details/107785376
+
+https://stackoverflow.com/questions/49221565/unable-to-use-cv-bridge-with-ros-kinetic-and-python3?rq=1
+
