@@ -123,3 +123,18 @@ for(int i = 0; i < amount_of_pixels; i++) {
    32FC1_data[i] = 16UC1_data[i] / 1000;
 }
 ```
+
+```python
+def convertDepthEncoding(imageMsg, bridge):
+    """
+    convert given image from 16UC1 in mm to 32FC1 m
+    using given cv bridge
+    Refer https://github.com/spencer-project/spencer_people_tracking/issues/4
+    """
+    #convert from 16UC1 in mm to 32FC1 m
+    cvImg = bridge.imgmsg_to_cv2(imageMsg)
+    cvImg32F = cvImg.astype('float32') / 1000.0
+    convertedImageMsg = bridge.cv2_to_imgmsg(cvImg32F)
+    convertedImageMsg.header = imageMsg.header
+    return convertedImageMsg
+```
