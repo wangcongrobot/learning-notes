@@ -114,3 +114,12 @@ https://blog.csdn.net/weixin_42675603/article/details/107785376
 
 https://stackoverflow.com/questions/49221565/unable-to-use-cv-bridge-with-ros-kinetic-and-python3?rq=1
 
+## depth image format
+
+16UC1 (millimeters) to 32FC1 (meters)
+
+```c++
+for(int i = 0; i < amount_of_pixels; i++) {
+   32FC1_data[i] = 16UC1_data[i] / 1000;
+}
+```
