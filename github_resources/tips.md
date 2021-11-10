@@ -23,7 +23,7 @@ pushed:>YYYY-MM-DD // 最后更新时间大于YYYY-MM-DD
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
-git diff提示filemode发生改变（old mode 100644、new mode 10075）
+git diff提示filemode发生改变（old modee 100644、new mode 10075）
 ```bash
 git config --add core.filemode false
 ```
